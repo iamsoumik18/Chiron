@@ -1,6 +1,8 @@
 package com.example.getinfo;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -30,7 +32,8 @@ public class MainLogin extends AppCompatActivity {
         binding.userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"User",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainLogin.this, SignUpUser.class);
+                startActivity(i);
             }
         });
 
@@ -48,7 +51,8 @@ public class MainLogin extends AppCompatActivity {
         binding.aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"About",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainLogin.this, SignUpAdmin.class);
+                startActivity(i);
             }
         });
 
