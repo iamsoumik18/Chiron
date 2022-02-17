@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194370236425",
+    "project_id": "hosptial-details",
+    "storage_bucket": "hosptial-details.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194370236425:android:caeff87fd2e02138eb08d8",
+        "android_client_info": {
+          "package_name": "com.example.getinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194370236425-ku6ho2hdcfpcig97dlfgbpl1fvo0hs5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAwHsdn-wwDnCOjaQT8_MecerPCOV865o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194370236425-ku6ho2hdcfpcig97dlfgbpl1fvo0hs5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
