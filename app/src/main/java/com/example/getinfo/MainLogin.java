@@ -42,7 +42,7 @@ public class MainLogin extends AppCompatActivity {
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Request",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Guest",Toast.LENGTH_SHORT).show();
             }
         });
 

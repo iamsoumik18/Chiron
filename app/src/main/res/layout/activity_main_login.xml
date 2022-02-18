@@ -4,7 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBack"
     tools:context=".MainLogin">
+
+    <LinearLayout
+        android:id="@+id/topBack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_223sdp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/yellow_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="@string/welcome_message"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/_28ssp" />
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topContainer"
@@ -16,93 +38,91 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/aboutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ABOUT"
-            android:textSize="24sp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_info"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/appName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Info"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
-
     <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/buttonContainer"
-        android:layout_width="wrap_content"
+        android:id="@+id/bottomBack"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appName">
+        app:layout_constraintTop_toBottomOf="@id/topBack"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
-            android:id="@+id/adminContainer"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:orientation="vertical"
+            android:id="@+id/buttonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/adminButton"
+            <LinearLayout
+                android:id="@+id/adminContainer"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="ADMIN"
-                android:textSize="28sp"
-                android:padding="20dp"/>
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/adminButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/ubuntu"
+                    android:padding="@dimen/_20sdp"
+                    android:text="ADMIN"
+                    android:textSize="@dimen/_20ssp" />
 
-        <LinearLayout
-            android:id="@+id/userContainer"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/userButton"
+            <LinearLayout
+                android:id="@+id/userContainer"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="USER"
-                android:textSize="28sp"
-                android:padding="20dp"/>
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/userButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/ubuntu"
+                    android:padding="@dimen/_20sdp"
+                    android:text="USER"
+                    android:textSize="@dimen/_20ssp" />
 
-        <LinearLayout
-            android:id="@+id/requestContainer"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/requestButton"
+            <LinearLayout
+                android:id="@+id/requestContainer"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="REQUEST"
-                android:textSize="28sp"
-                android:padding="20dp"/>
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/requestButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/ubuntu"
+                    android:padding="@dimen/_20sdp"
+                    android:text="GUEST"
+                    android:textSize="@dimen/_20ssp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
