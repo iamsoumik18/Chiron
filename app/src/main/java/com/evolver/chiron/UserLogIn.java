@@ -1,4 +1,4 @@
-package com.example.getinfo;
+package com.evolver.chiron;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

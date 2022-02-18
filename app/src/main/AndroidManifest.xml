@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.getinfo">
+    package="com.evolver.chiron">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,22 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GetInfo">
         <activity
-            android:name=".DashBoardUser"
+            android:name="com.evolver.chiron.DashBoardUser"
             android:exported="false" />
         <activity
-            android:name=".UserLogIn"
+            android:name="com.evolver.chiron.UserLogIn"
             android:exported="false" />
         <activity
-            android:name=".ForgetPassword"
+            android:name="com.evolver.chiron.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".SignUpUser"
+            android:name="com.evolver.chiron.SignUpUser"
             android:exported="false" />
         <activity
-            android:name=".SignUpAdmin"
+            android:name="com.evolver.chiron.SignUpAdmin"
             android:exported="false" />
         <activity
-            android:name=".MainLogin"
+            android:name="com.evolver.chiron.MainLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

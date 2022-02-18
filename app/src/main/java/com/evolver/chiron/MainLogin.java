@@ -1,4 +1,4 @@
-package com.example.getinfo;
+package com.evolver.chiron;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.getinfo.databinding.ActivityMainLoginBinding;
+import com.evolver.chiron.databinding.ActivityMainLoginBinding;
 
 public class MainLogin extends AppCompatActivity {
 
