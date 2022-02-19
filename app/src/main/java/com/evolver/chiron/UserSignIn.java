@@ -45,10 +45,15 @@ public class UserSignIn extends AppCompatActivity {
         Lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String UEmail = Email.getText().toString();
-                String Upassword = pass.getText().toString();
-                SignWithFirebase(UEmail, Upassword);
-
+                if(Email.getText().toString().contentEquals("")){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(pass.getText().toString().contentEquals("")){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else {
+                    String UEmail = Email.getText().toString();
+                    String Upassword = pass.getText().toString();
+                    SignWithFirebase(UEmail, Upassword);
+                }
             }
         });
         //click action for sign up for user
