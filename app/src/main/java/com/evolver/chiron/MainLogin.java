@@ -24,7 +24,8 @@ public class MainLogin extends AppCompatActivity {
         binding.adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Admin",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainLogin.this, AdminSignIn.class);
+                startActivity(i);
             }
         });
 
@@ -37,7 +38,6 @@ public class MainLogin extends AppCompatActivity {
             }
         });
 
-
         //Click Action for Guest Button
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,13 +46,11 @@ public class MainLogin extends AppCompatActivity {
             }
         });
 
-
         //Click Action for About Button
         binding.aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainLogin.this, SignUpAdmin.class);
-                startActivity(i);
+                Toast.makeText(getApplicationContext(),"About",Toast.LENGTH_SHORT).show();
             }
         });
 

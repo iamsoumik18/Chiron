@@ -24,7 +24,7 @@
             android:name="com.evolver.chiron.UserSignIn"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.SignUpAdmin"
+            android:name="com.evolver.chiron.AdminSignIn"
             android:exported="false" />
         <activity
             android:name="com.evolver.chiron.MainLogin"
