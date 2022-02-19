@@ -15,13 +15,13 @@
             android:name="com.evolver.chiron.DashBoardUser"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.UserLogIn"
+            android:name="com.evolver.chiron.UserSignUp"
             android:exported="false" />
         <activity
             android:name="com.evolver.chiron.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.SignUpUser"
+            android:name="com.evolver.chiron.UserSignIn"
             android:exported="false" />
         <activity
             android:name="com.evolver.chiron.SignUpAdmin"

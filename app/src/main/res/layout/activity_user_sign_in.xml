@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
     android:background="@color/mainBack"
-    tools:context=".SignUpUser">
+    android:weightSum="10"
+    android:orientation="vertical"
+    tools:context=".UserSignIn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -112,11 +112,33 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/yellow_fill_rounded"
                 android:fontFamily="@font/ubuntu_medium"
-                android:text="SIGN UP"
+                android:text="SIGN IN"
                 android:textColor="@color/textColor1"
                 android:textSize="@dimen/_15ssp" />
 
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/Forgetbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:fontFamily="@font/ubuntu_light"
+            android:text="Forgot Password?"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            android:id="@+id/Signupbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/ubuntu_light"
+            android:text="Don't have an account? Sign Up"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/_12ssp" />
 
         <ProgressBar
             android:id="@+id/pp"

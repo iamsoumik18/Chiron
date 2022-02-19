@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUpUser extends AppCompatActivity {
+public class UserSignIn extends AppCompatActivity {
 
     EditText Email;
     EditText pass;
@@ -30,7 +30,7 @@ public class SignUpUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_user);
+        setContentView(R.layout.activity_user_sign_in);
 
         Email = findViewById(R.id.email);
         pass = findViewById(R.id.password);
@@ -56,7 +56,7 @@ public class SignUpUser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(SignUpUser.this, UserLogIn.class);
+                Intent i = new Intent(UserSignIn.this, UserSignUp.class);
                 startActivity(i);
             }
         });
@@ -64,7 +64,7 @@ public class SignUpUser extends AppCompatActivity {
         Forg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SignUpUser.this, ForgetPassword.class);
+                Intent i = new Intent(UserSignIn.this, ForgetPassword.class);
                 startActivity(i);
             }
         });
@@ -75,7 +75,7 @@ public class SignUpUser extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if(user != null){
-            Intent i = new Intent(SignUpUser.this, DashBoardUser.class);
+            Intent i = new Intent(UserSignIn.this, DashBoardUser.class);
             startActivity(i);
             finish();
         }
@@ -88,13 +88,13 @@ public class SignUpUser extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent i = new Intent(SignUpUser.this, DashBoardUser.class);
+                    Intent i = new Intent(UserSignIn.this, DashBoardUser.class);
                     startActivity(i);
                     finish();
-                    Toast.makeText(SignUpUser.this, "Succesfully Sign in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserSignIn.this, "Succesfully Sign in", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(SignUpUser.this, "There is a Problem . Please Try Agaig Later", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserSignIn.this, "There is a Problem . Please Try Agaig Later", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -32,13 +32,13 @@ public class MainLogin extends AppCompatActivity {
         binding.userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainLogin.this, SignUpUser.class);
+                Intent i = new Intent(MainLogin.this, UserSignIn.class);
                 startActivity(i);
             }
         });
 
 
-        //Click Action for Request Button
+        //Click Action for Guest Button
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

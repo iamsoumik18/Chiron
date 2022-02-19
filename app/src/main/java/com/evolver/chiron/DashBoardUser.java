@@ -26,7 +26,7 @@ public class DashBoardUser extends AppCompatActivity {
             public void onClick(View view) {
                 auth.signOut();
                 Intent i = new Intent(DashBoardUser
-                        .this, SignUpUser.class);
+                        .this, UserSignIn.class);
                 startActivity(i);
                 finish();
             }
