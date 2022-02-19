@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_app_icon.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_engineering.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_info.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image3.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_sign_in.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_main_login.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_sign_up_admin.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_sign_up_user.xml" value="0.22592592592592592" />
