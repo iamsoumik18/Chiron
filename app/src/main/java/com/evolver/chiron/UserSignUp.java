@@ -36,38 +36,37 @@ public class UserSignUp extends AppCompatActivity {
 
         p.setVisibility(View.INVISIBLE);
 
-
         //click action for sign up for user if they dont have account
         Lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Lg.setClickable(false);
-
-                String userEmail = Email.getText().toString();
-                String userPassword = pass.getText().toString();
-                singupFirebase(userEmail, userPassword);
+                if(Email.getText().toString().contentEquals("")){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                }else if(pass.getText().toString().contentEquals("")){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }else {
+                    String userEmail = Email.getText().toString();
+                    String userPassword = pass.getText().toString();
+                    singUpFirebase(userEmail, userPassword);
+                }
             }
         });
-
-
     }
+
     //Sign up method that connect the user to the firebase
-    public void singupFirebase(String userEmail, String userPassword) {
+    public void singUpFirebase(String userEmail, String userPassword) {
         p.setVisibility(View.VISIBLE);
         auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(UserSignUp.this, "Your Account is created Succesfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserSignUp.this, "Your Account is created Successfully", Toast.LENGTH_LONG).show();
                     finish();
                     p.setVisibility(View.INVISIBLE);
                 } else {
                     Toast.makeText(UserSignUp.this, "There is an error. Please Try again Later", Toast.LENGTH_LONG).show();
-
                 }
-
             }
         });
-
     }
 }

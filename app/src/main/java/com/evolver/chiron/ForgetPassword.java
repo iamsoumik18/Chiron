@@ -36,15 +36,19 @@ public class ForgetPassword extends AppCompatActivity {
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                p.setVisibility(View.VISIBLE);
-
-                String ukEmail = Email.getText().toString();
-                forgetpassword(ukEmail);
+                if(Email.getText().toString().contentEquals("")){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                }else {
+                    p.setVisibility(View.VISIBLE);
+                    String ukEmail = Email.getText().toString();
+                    forgetPassword(ukEmail);
+                }
             }
         });
     }
+
     //forget password method that sent an email to the user and user can reset their password
-    public void forgetpassword(String UserMail){
+    public void forgetPassword(String UserMail){
         p.setVisibility(View.VISIBLE);
         auth.sendPasswordResetEmail(UserMail).addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
@@ -57,7 +61,6 @@ public class ForgetPassword extends AppCompatActivity {
                 }
             }
         });
-
     }
 
 }
