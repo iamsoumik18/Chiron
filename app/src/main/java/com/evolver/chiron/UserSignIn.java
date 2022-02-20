@@ -80,7 +80,7 @@ public class UserSignIn extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if(user != null){
-            Intent i = new Intent(UserSignIn.this, DashBoardUser.class);
+            Intent i = new Intent(UserSignIn.this, UserMainActivity.class);
             startActivity(i);
             finish();
         }
@@ -93,7 +93,7 @@ public class UserSignIn extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent i = new Intent(UserSignIn.this, DashBoardUser.class);
+                    Intent i = new Intent(UserSignIn.this, UserMainActivity.class);
                     startActivity(i);
                     finish();
                     Toast.makeText(UserSignIn.this, "Succesfully Sign in", Toast.LENGTH_SHORT).show();

@@ -12,22 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chiron">
         <activity
-            android:name="com.evolver.chiron.DashBoardUser"
+            android:name=".UserMainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".DashBoardUser"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.UserSignUp"
+            android:name=".UserSignUp"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.ForgetPassword"
+            android:name=".ForgetPassword"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.UserSignIn"
+            android:name=".UserSignIn"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.AdminSignIn"
+            android:name=".AdminSignIn"
             android:exported="false" />
         <activity
-            android:name="com.evolver.chiron.MainLogin"
+            android:name=".MainLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
