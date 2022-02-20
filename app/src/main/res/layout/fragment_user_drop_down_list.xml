@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mainBack"
     tools:context=".UserDropDownListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Drop Down" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textViewIndianStates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:text="State"
+            android:fontFamily="@font/ubuntu"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/textColor1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+
+        <Spinner
+            android:id="@+id/spinnerIndianStates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_below="@id/textViewIndianStates"/>
+
+        <TextView
+            android:id="@+id/textViewIndianDistricts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinnerIndianStates"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="District"
+            android:fontFamily="@font/ubuntu"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/textColor1"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Spinner
+            android:id="@+id/spinnerIndianDistricts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_below="@id/textViewIndianDistricts"/>
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinnerIndianDistricts"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Search"
+            android:textColor="@color/textColor1"
+            android:fontFamily="@font/ubuntu"
+            android:background="@drawable/rounded_button"
+            android:textSize="@dimen/_15ssp"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+</LinearLayout>
