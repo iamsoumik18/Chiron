@@ -12,13 +12,17 @@
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image3.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_sign_in.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_guest_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_main_login.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_sign_up_admin.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_sign_up_user.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_log_in.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_main.xml" value="0.21342592592592594" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_sign_in.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_drop_down_list.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_guest_drop_down_list.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_guest_search_by_voice.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_search_by_voice.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/GetInfo/app/src/main/res/drawable/ic_account_circle.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/GetInfo/app/src/main/res/drawable/ic_info.xml" value="0.243" />
