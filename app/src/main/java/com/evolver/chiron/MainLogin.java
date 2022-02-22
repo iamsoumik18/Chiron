@@ -56,4 +56,15 @@ public class MainLogin extends AppCompatActivity {
         });
 
     }
+
+    /*
+    This is a temporary fix where MainLogin Activity appears on backspace
+    again when a user sign out of the app.
+    */
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+    }
 }

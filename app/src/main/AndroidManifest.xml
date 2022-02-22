@@ -24,9 +24,6 @@
             android:name=".UserMainActivity"
             android:exported="false" />
         <activity
-            android:name=".DashBoardUser"
-            android:exported="false" />
-        <activity
             android:name=".UserSignUp"
             android:exported="false" />
         <activity

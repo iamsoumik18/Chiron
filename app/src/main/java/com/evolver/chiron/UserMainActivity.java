@@ -8,15 +8,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.evolver.chiron.databinding.ActivityUserMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserMainActivity extends AppCompatActivity {
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     ActivityUserMainBinding binding;
 
@@ -71,4 +78,26 @@ public class UserMainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.user_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.signOut:
+                auth.signOut();
+                Intent i = new Intent(UserMainActivity.this, MainLogin.class);
+                startActivity(i);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

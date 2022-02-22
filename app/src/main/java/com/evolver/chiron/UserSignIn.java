@@ -96,10 +96,13 @@ public class UserSignIn extends AppCompatActivity {
                     Intent i = new Intent(UserSignIn.this, UserMainActivity.class);
                     startActivity(i);
                     finish();
-                    Toast.makeText(UserSignIn.this, "Succesfully Sign in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserSignIn.this, "Successfully Signed In", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    Toast.makeText(UserSignIn.this, "There is a Problem . Please Try Agaig Later", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserSignIn.this, "Email ID or Password is incorrect", Toast.LENGTH_LONG).show();
+                    p.setVisibility(View.INVISIBLE);
+                    Email.getText().clear();
+                    pass.getText().clear();
                 }
             }
         });
