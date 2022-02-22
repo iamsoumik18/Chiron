@@ -5,12 +5,20 @@
       <map>
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_account_tree.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_app_icon.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_business.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_engineering.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_info.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_language.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_location_city.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_location_on.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_mic.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_person.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_phone.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_supervisor_account.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/image3.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_request.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_sign_in.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_guest_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_main.xml" value="0.22592592592592592" />
@@ -40,9 +48,6 @@
         <entry key="..\:/Users/iamso/Desktop/GetInfo/app/src/main/res/layout/activity_sign_up_admin.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/GetInfo/app/src/main/res/layout/activity_sign_up_user.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/GetInfo/app/src/main/res/layout/activity_user_log_in.xml" value="0.22592592592592592" />
-        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_admin_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_admin_request.xml" value="0.1814814814814815" />
-        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_admin_sign_in.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_dash_board_user.xml" value="0.18" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_forget_password.xml" value="0.17" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_main_login.xml" value="0.22" />

@@ -1,110 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mainBack"
+    android:weightSum="10"
     tools:context=".AdminRequestActivity">
 
-    <EditText
-        android:id="@+id/edname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:hint="Organization Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/yellow_bg"
+        android:layout_weight="6"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="101dp"
-        android:ems="10"
-        android:hint="Organization Email"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edname"
-        tools:ignore="TouchTargetSizeCheck" />
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/ic_supervisor_account" />
 
-    <EditText
-        android:id="@+id/edph"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="101dp"
-        android:ems="10"
-        android:hint="Organization Ph no"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edemail"
-        tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/edaddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="99dp"
-        android:ems="10"
-        android:hint="Organization Address"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edph"
-        tools:ignore="TouchTargetSizeCheck" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
 
-    <Button
-        android:id="@+id/btRequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="164dp"
-        android:text="REQUEST"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edcountry" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_15sdp"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/eddist"
-        android:layout_width="312dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:hint="District(Please Write All in Caps)"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edaddress"
-        tools:ignore="TouchTargetSizeCheck" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
 
-    <EditText
-        android:id="@+id/edstate"
-        android:layout_width="312dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:hint="State(Please Write All in Caps)"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eddist"
-        tools:ignore="TouchTargetSizeCheck" />
+                <EditText
+                    android:id="@+id/edname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/username_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="Organization Name"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
 
-    <EditText
-        android:id="@+id/edcountry"
-        android:layout_width="312dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:hint="Country(Please Write All in Caps)"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edstate"
-        tools:ignore="TouchTargetSizeCheck" />
+                <ImageView
+                    android:id="@+id/username_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_person"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/edemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/mail_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="Organization Email"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/mail_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_mail"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/edph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ph_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="Organization Phone No"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/ph_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_phone"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/edaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/address_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:gravity="top"
+                    android:hint="Organization Address"
+                    android:inputType="textMultiLine"
+                    android:minHeight="@dimen/_1sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/address_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_business"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/eddist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/dist_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="District"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/dist_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_location_on"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/edstate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/state_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="State"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/state_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_location_city"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:background="@drawable/yellow_rounded_corner">
+
+                <EditText
+                    android:id="@+id/edcountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/country_icon"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ubuntu"
+                    android:hint="Country"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+                <ImageView
+                    android:id="@+id/country_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:src="@drawable/ic_language"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_43sdp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yellow_fill_rounded"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:text="REQUEST"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_15ssp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
