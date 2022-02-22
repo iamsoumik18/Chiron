@@ -54,6 +54,13 @@ public class AdminSignIn extends AppCompatActivity {
 
             }
         });
+        binding.requestAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AdminSignIn.this, AdminRequestActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void AdminCheck(){
