@@ -82,7 +82,7 @@ public class MainLogin extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_HOME);
         startActivity(intent);
     }
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -110,5 +110,5 @@ public class MainLogin extends AppCompatActivity {
             });
         }
     }
-
+*/
 }
