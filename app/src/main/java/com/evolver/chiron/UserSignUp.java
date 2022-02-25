@@ -108,6 +108,7 @@ public class UserSignUp extends AppCompatActivity {
         databaseReference.child("User Detail").child(userId).child("adress").setValue(ad);
         databaseReference.child("User Detail").child(userId).child("name").setValue(nm);
         databaseReference.child("User Detail").child(userId).child("phone no").setValue(pp);
+        databaseReference.child("User Detail").child(userId).child("flag").setValue(0);
 
 
     }
