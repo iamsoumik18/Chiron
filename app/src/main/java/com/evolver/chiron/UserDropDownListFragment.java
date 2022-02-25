@@ -11,8 +11,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.evolver.chiron.databinding.FragmentUserDropDownListBinding;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UserDropDownListFragment extends Fragment {
 
@@ -23,6 +26,8 @@ public class UserDropDownListFragment extends Fragment {
     FragmentUserDropDownListBinding binding;
     private String selectedState, selectedDistrict;
     private ArrayAdapter<CharSequence> stateAdapter, districtAdapter;
+
+    UserAdapter adapter;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -73,6 +78,8 @@ public class UserDropDownListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.detailsContainer.setVisibility(View.INVISIBLE);
 
         stateAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.array_indian_states,R.layout.spinner_layout);
 
@@ -250,10 +257,29 @@ public class UserDropDownListFragment extends Fragment {
                 binding.textViewIndianDistricts.setError(null);
                 Toast.makeText(getActivity(), "Selected State: "+selectedState+"\nSelected District: "+selectedDistrict, Toast.LENGTH_LONG).show();
 
-                
+                binding.detailsContainer.setVisibility(View.VISIBLE);
+
+                binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                FirebaseRecyclerOptions<Model> options =
+                        new FirebaseRecyclerOptions.Builder<Model>()
+                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), Model.class)
+                                .build();
+
+                if(options!=null) {
+                    adapter = new UserAdapter(options);
+                    adapter.startListening();
+                    binding.recView.setAdapter(adapter);
+                }
 
             }
         });
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
 }
