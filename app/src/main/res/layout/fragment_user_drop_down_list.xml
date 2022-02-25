@@ -59,12 +59,12 @@
             android:layout_below="@id/spinnerIndianDistricts"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_15sdp"
-            android:text="Search"
-            android:textColor="@color/textColor1"
-            android:fontFamily="@font/ubuntu"
             android:background="@drawable/rounded_button"
-            android:textSize="@dimen/_15ssp"
-            android:textAlignment="center" />
+            android:fontFamily="@font/ubuntu"
+            android:text="Search"
+            android:textAlignment="center"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/_15ssp" />
 
     </RelativeLayout>
 

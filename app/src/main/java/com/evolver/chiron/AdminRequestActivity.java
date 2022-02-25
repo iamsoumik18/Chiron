@@ -20,8 +20,8 @@ public class AdminRequestActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
 
-    FirebaseAuth authm = FirebaseAuth.getInstance();
-    FirebaseUser user = authm.getCurrentUser();
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class AdminRequestActivity extends AppCompatActivity {
 
     }
     public void detailOfuser(){
+
         String name = binding.edname.getText().toString();
         String email = binding.edemail.getText().toString();
         String phn = binding.edph.getText().toString();

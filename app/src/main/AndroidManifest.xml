@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chiron">
         <activity
+            android:name=".UserRecycler"
+            android:exported="false" />
+        <activity
             android:name=".AdminRequestActivity"
             android:exported="false" />
         <activity

@@ -1,11 +1,6 @@
 package com.evolver.chiron;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +8,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.evolver.chiron.databinding.FragmentUserDropDownListBinding;
 
 public class UserDropDownListFragment extends Fragment {
+
+
+
+
 
     FragmentUserDropDownListBinding binding;
     private String selectedState, selectedDistrict;
@@ -43,16 +46,26 @@ public class UserDropDownListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         binding = FragmentUserDropDownListBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -70,6 +83,8 @@ public class UserDropDownListFragment extends Fragment {
         binding.spinnerIndianStates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
 
                 selectedState = binding.spinnerIndianStates.getSelectedItem().toString();
                 binding.textViewIndianStates.setError(null);
@@ -234,6 +249,9 @@ public class UserDropDownListFragment extends Fragment {
                 binding.textViewIndianStates.setError(null);
                 binding.textViewIndianDistricts.setError(null);
                 Toast.makeText(getActivity(), "Selected State: "+selectedState+"\nSelected District: "+selectedDistrict, Toast.LENGTH_LONG).show();
+
+                
+
             }
         });
     }

@@ -44,9 +44,14 @@
         <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_admin_request.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_admin_sign_in.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_main_login.xml" value="0.1814814814814815" />
-        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_user_main.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_user_main.xml" value="0.3104145601617796" />
         <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_user_sign_in.xml" value="0.1814814814814815" />
         <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/activity_user_sign_up.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/fragment_guest_drop_down_list.xml" value="0.14212962962962963" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/fragment_user_drop_down_list.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/item.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/person.xml" value="0.1814814814814815" />
+        <entry key="..\:/Users/user/Desktop/Chiron/app/src/main/res/layout/userlist.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_dash_board_user.xml" value="0.18" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_forget_password.xml" value="0.17" />
         <entry key="..\:/Users/user/Desktop/Get-Info/app/src/main/res/layout/activity_main_login.xml" value="0.22" />
