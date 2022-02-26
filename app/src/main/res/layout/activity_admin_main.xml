@@ -47,6 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Hospital Name: "
+                    android:fontFamily="@font/ubuntu_light"
                     android:textColor="@color/textColor1"
                     android:textSize="@dimen/_15ssp"/>
 
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="No of Bed:"
+                    android:fontFamily="@font/ubuntu_light"
                     android:textColor="@color/textColor1"
                     android:textSize="@dimen/_15ssp"/>
 
@@ -102,6 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Price(per Bed) Rs: "
+                    android:fontFamily="@font/ubuntu_light"
                     android:textSize="@dimen/_15ssp"
                     android:textColor="@color/textColor1"/>
 

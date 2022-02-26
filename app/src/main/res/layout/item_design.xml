@@ -11,11 +11,13 @@
         android:layout_margin="@dimen/_10sdp"
         android:id="@+id/cardView"
         app:cardElevation="@dimen/_5sdp"
-        app:cardCornerRadius="@dimen/_4sdp">
+        app:cardCornerRadius="@dimen/_25sdp">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/cardBack"
+            android:padding="@dimen/_15sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,12 +33,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Hospital Name:"
-                        android:textSize="@dimen/_24ssp"/>
+                        android:fontFamily="@font/ubuntu_light"
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_15ssp"/>
 
                     <TextView
                         android:id="@+id/hospitalName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/textColor1"
                         android:textSize="@dimen/_20ssp" />
 
                 </LinearLayout>
@@ -44,19 +50,22 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:orientation="vertical">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bed Count: "
-                        android:textSize="@dimen/_24ssp"/>
+                        android:fontFamily="@font/ubuntu_light"
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_15ssp"/>
 
                     <TextView
                         android:id="@+id/bedCnt"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/textColor1"
                         android:textSize="@dimen/_20ssp"/>
 
                 </LinearLayout>
@@ -64,19 +73,22 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price (per Bed) Rs: "
-                        android:textSize="@dimen/_20ssp"/>
+                        android:text="Price(per Bed) Rs: "
+                        android:fontFamily="@font/ubuntu_light"
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_15ssp"/>
 
                     <TextView
                         android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/textColor1"
                         android:textSize="@dimen/_20ssp"/>
 
                 </LinearLayout>
