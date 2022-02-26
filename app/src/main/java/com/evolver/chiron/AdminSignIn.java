@@ -49,6 +49,7 @@ public class AdminSignIn extends AppCompatActivity {
                 if(a.equals(VerEmail1) && b.equals(verpassword1)){
                     detailOfAdmin();
                     Intent i = new Intent(AdminSignIn.this, AdminMainActivity.class);
+                    i.putExtra("adminEmail",a);
                     startActivity(i);
                 }
 

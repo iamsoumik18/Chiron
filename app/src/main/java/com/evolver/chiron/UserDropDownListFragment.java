@@ -266,20 +266,12 @@ public class UserDropDownListFragment extends Fragment {
                                 .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), Model.class)
                                 .build();
 
-                if(options!=null) {
-                    adapter = new UserAdapter(options);
-                    adapter.startListening();
-                    binding.recView.setAdapter(adapter);
-                }
-
+                adapter = new UserAdapter(options);
+                adapter.startListening();
+                binding.recView.setAdapter(adapter);
             }
         });
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
 
 }
