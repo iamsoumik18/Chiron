@@ -40,6 +40,7 @@ public class AdminMainActivity extends AppCompatActivity {
         binding.updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.progressBar.setVisibility(View.VISIBLE);
                 setValue();
                 Toast.makeText(getApplicationContext(), "Files Updated", Toast.LENGTH_SHORT).show();
             }
@@ -108,6 +109,7 @@ public class AdminMainActivity extends AppCompatActivity {
                 binding.hospitalName.setText(hospitalName);
                 binding.bedCount.setText(bedCnt);
                 binding.price.setText(price);
+                binding.progressBar.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -122,6 +124,7 @@ public class AdminMainActivity extends AppCompatActivity {
         String price = binding.price.getText().toString();
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").setValue(bedCnt);
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
+        binding.progressBar.setVisibility(View.INVISIBLE);
     }
 
 }

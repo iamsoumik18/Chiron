@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_15sdp"
-            android:paddingBottom="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_30sdp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -140,6 +140,14 @@
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_gravity="center"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_22sdp"/>
 
         </LinearLayout>
 
