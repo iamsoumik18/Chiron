@@ -1,5 +1,6 @@
 package com.evolver.chiron;
 
+import androidx.annotation.Discouraged;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +23,7 @@ public class AdminMainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
 
-    String adminEmail, adminKey, adminHospital, adminState, adminDistrict, orgKey, hospitalName, bedCnt;
+    String adminEmail, adminKey, adminHospital, adminState, adminDistrict, orgKey, hospitalName, bedCnt, price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +104,10 @@ public class AdminMainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 hospitalName = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("hospital").getValue().toString();
                 bedCnt = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").getValue().toString();
+                price = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").getValue().toString();
                 binding.hospitalName.setText(hospitalName);
                 binding.bedCount.setText(bedCnt);
+                binding.price.setText(price);
             }
 
             @Override
@@ -116,7 +119,16 @@ public class AdminMainActivity extends AppCompatActivity {
 
     private void setValue(){
         String bedCnt = binding.bedCount.getText().toString();
+        String price = binding.price.getText().toString();
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").setValue(bedCnt);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(AdminMainActivity.this,MainLogin.class);
+        startActivity(intent);
+        finish();
+    }
 }

@@ -1,9 +1,11 @@
 package com.evolver.chiron;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,16 +20,9 @@ public class AdminSignIn extends AppCompatActivity {
 
     ActivityAdminSignInBinding binding;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference = database.getReference().child("VerifiedAdmin");
+    DatabaseReference databaseReference = database.getReference();
 
-    FirebaseDatabase database1 = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference1 = database1.getReference();
-
-    String a;
-    String b;
-
-    String VerEmail1;
-    String verpassword1;
+    private String checkId, curEmail, curPassword, verEmail, verPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,23 +33,23 @@ public class AdminSignIn extends AppCompatActivity {
 
         binding.progressBar.setVisibility(View.INVISIBLE);
 
-
         //sign in as admin
         binding.btSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.progressBar.setVisibility(View.VISIBLE);
+                curEmail = binding.email.getText().toString();
+                curPassword = binding.password.getText().toString();
+                /*new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        AdminCheck();
+                    }
+                },1000);*/
                 AdminCheck();
-                a = binding.email.getText().toString();
-                b = binding.password.getText().toString();
-                if(a.equals(VerEmail1) && b.equals(verpassword1)){
-                    detailOfAdmin();
-                    Intent i = new Intent(AdminSignIn.this, AdminMainActivity.class);
-                    i.putExtra("adminEmail",a);
-                    startActivity(i);
-                }
-
             }
         });
+
         binding.requestAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,32 +59,49 @@ public class AdminSignIn extends AppCompatActivity {
         });
     }
 
-    public void AdminCheck(){
-
-        // Read from the database
-        databaseReference.addValueEventListener(new ValueEventListener() {
+    private void AdminCheck(){
+        databaseReference.child("VerifiedAdmin").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                VerEmail1 = dataSnapshot.child("1").child("AdminEmail").getValue().toString();
-                verpassword1 = dataSnapshot.child(String.valueOf("1")).child("AdminPassword").getValue().toString();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot childSnapshot: snapshot.getChildren()){
+                    checkId = childSnapshot.getKey();
+                }
+                if(checkId==null){
+                    Toast.makeText(getApplicationContext(), "Email ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                    binding.email.setText(null);
+                    binding.password.setText(null);
+                    binding.progressBar.setVisibility(View.INVISIBLE);
+                }else {
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            verPassword = snapshot.child("VerifiedAdmin").child(checkId).child("AdminPassword").getValue().toString();
+                            if (verPassword.equals(curPassword)) {
+                                Intent intent = new Intent(AdminSignIn.this, AdminMainActivity.class);
+                                intent.putExtra("adminEmail", curEmail);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Email ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                                binding.email.setText(null);
+                                binding.password.setText(null);
+                                binding.progressBar.setVisibility(View.INVISIBLE);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                Toast.makeText(AdminSignIn.this, "Their is some error", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-    public void detailOfAdmin(){
-
-        String a = binding.email.getText().toString();
-        databaseReference1.child("Admin Login Details").setValue(a);
-
-
     }
 
 }

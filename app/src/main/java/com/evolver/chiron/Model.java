@@ -4,14 +4,16 @@ public class Model {
 
     String hospital;
     String bed;
+    String price;
 
     public Model(){
 
     }
 
-    public Model(String hospital, String bed) {
+    public Model(String hospital, String bed, String price) {
         this.hospital = hospital;
         this.bed = bed;
+        this.price = price;
     }
 
     public String getHospital() {
@@ -28,5 +30,13 @@ public class Model {
 
     public void setBed(String bed) {
         this.bed = bed;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }

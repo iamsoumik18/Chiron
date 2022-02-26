@@ -23,6 +23,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Model, UserAdapter.View
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Model model) {
         holder.name.setText(model.getHospital());
         holder.bedCnt.setText(model.getBed());
+        holder.price.setText(model.getPrice());
     }
 
     @NonNull
@@ -36,11 +37,13 @@ public class UserAdapter extends FirebaseRecyclerAdapter<Model, UserAdapter.View
 
         TextView name;
         TextView bedCnt;
+        TextView price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.hospitalName);
             bedCnt = itemView.findViewById(R.id.bedCnt);
+            price = itemView.findViewById(R.id.price);
         }
     }
 
