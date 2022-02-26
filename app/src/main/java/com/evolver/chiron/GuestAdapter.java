@@ -11,23 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.ViewHolder> {
+public class GuestAdapter extends FirebaseRecyclerAdapter<GuestModel, GuestAdapter.ViewHolder> {
 
-    public UserAdapter(@NonNull FirebaseRecyclerOptions<UserModel> options) {
+    public GuestAdapter(@NonNull FirebaseRecyclerOptions<GuestModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull UserModel userModel) {
-        holder.name.setText(userModel.getHospital());
-        holder.bedCnt.setText(userModel.getBed());
-        holder.price.setText(userModel.getPrice());
+    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull GuestModel guestModel) {
+        holder.name.setText(guestModel.getHospital());
+        holder.bedCnt.setText(guestModel.getBed());
+        holder.price.setText(guestModel.getPrice());
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_item_design,parent,false);
+    public GuestAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.guest_item_design,parent,false);
         return new ViewHolder(view);
     }
 
@@ -36,9 +36,9 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
         TextView name;
         TextView bedCnt;
         TextView price;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             name = itemView.findViewById(R.id.hospitalName);
             bedCnt = itemView.findViewById(R.id.bedCnt);
             price = itemView.findViewById(R.id.price);

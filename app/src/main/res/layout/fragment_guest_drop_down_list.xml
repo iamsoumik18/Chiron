@@ -59,13 +59,25 @@
             android:layout_below="@id/spinnerIndianDistricts"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_15sdp"
-            android:text="Search"
-            android:textColor="@color/textColor1"
-            android:fontFamily="@font/ubuntu"
             android:background="@drawable/rounded_button"
-            android:textSize="@dimen/_15ssp"
-            android:textAlignment="center" />
+            android:fontFamily="@font/ubuntu"
+            android:text="Search"
+            android:textAlignment="center"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/_15ssp" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </LinearLayout>

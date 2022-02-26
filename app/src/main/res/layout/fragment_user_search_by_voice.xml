@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".UserSearchByVoiceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Voice" />
+        android:gravity="center"
+        android:text="Feature will be available soon.\nStay tuned."
+        android:textSize="@dimen/_30ssp"/>
 
 </FrameLayout>

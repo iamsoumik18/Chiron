@@ -19,10 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class UserDropDownListFragment extends Fragment {
 
-
-
-
-
     FragmentUserDropDownListBinding binding;
     private String selectedState, selectedDistrict;
     private ArrayAdapter<CharSequence> stateAdapter, districtAdapter;
@@ -261,9 +257,9 @@ public class UserDropDownListFragment extends Fragment {
 
                 binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                FirebaseRecyclerOptions<Model> options =
-                        new FirebaseRecyclerOptions.Builder<Model>()
-                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), Model.class)
+                FirebaseRecyclerOptions<UserModel> options =
+                        new FirebaseRecyclerOptions.Builder<UserModel>()
+                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), UserModel.class)
                                 .build();
 
                 adapter = new UserAdapter(options);

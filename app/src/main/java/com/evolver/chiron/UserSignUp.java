@@ -29,15 +29,10 @@ public class UserSignUp extends AppCompatActivity {
     EditText phn;
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
-
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
 
     int Q=0;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

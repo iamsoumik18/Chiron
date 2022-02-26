@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.evolver.chiron.databinding.FragmentGuestDropDownListBinding;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class GuestDropDownListFragment extends Fragment {
 
     FragmentGuestDropDownListBinding binding;
     private String selectedState, selectedDistrict;
     private ArrayAdapter<CharSequence> stateAdapter, districtAdapter;
+
+    GuestAdapter adapter;
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -235,6 +240,19 @@ public class GuestDropDownListFragment extends Fragment {
                 binding.textViewIndianStates.setError(null);
                 binding.textViewIndianDistricts.setError(null);
                 Toast.makeText(getActivity(), "Selected State: "+selectedState+"\nSelected District: "+selectedDistrict, Toast.LENGTH_LONG).show();
+
+                binding.detailsContainer.setVisibility(View.VISIBLE);
+
+                binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                FirebaseRecyclerOptions<GuestModel> options =
+                        new FirebaseRecyclerOptions.Builder<GuestModel>()
+                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), GuestModel.class)
+                                .build();
+
+                adapter = new GuestAdapter(options);
+                adapter.startListening();
+                binding.recView.setAdapter(adapter);
             }
         });
 

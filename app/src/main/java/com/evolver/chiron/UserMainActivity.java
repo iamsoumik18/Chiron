@@ -26,7 +26,6 @@ public class UserMainActivity extends AppCompatActivity {
 
     ActivityUserMainBinding binding;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,16 +1,16 @@
 package com.evolver.chiron;
 
-public class Model {
+public class GuestModel {
 
     String hospital;
     String bed;
     String price;
 
-    public Model(){
+    public GuestModel(){
 
     }
 
-    public Model(String hospital, String bed, String price) {
+    public GuestModel(String hospital, String bed, String price) {
         this.hospital = hospital;
         this.bed = bed;
         this.price = price;
