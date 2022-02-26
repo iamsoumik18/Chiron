@@ -69,7 +69,7 @@ public class UserSignIn extends AppCompatActivity {
         Forg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(UserSignIn.this, ForgetPassword.class);
+                Intent i = new Intent(UserSignIn.this, UserForgetPassword.class);
                 startActivity(i);
             }
         });

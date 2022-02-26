@@ -5,88 +5,78 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
-import com.evolver.chiron.databinding.ActivityAdminSignInBinding;
+import com.evolver.chiron.databinding.ActivityAdminForgetPasswordBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AdminSignIn extends AppCompatActivity {
+public class AdminForgetPassword extends AppCompatActivity {
 
-    ActivityAdminSignInBinding binding;
+    ActivityAdminForgetPasswordBinding binding;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
 
-    private String checkId, curEmail, curPassword, verEmail, verPassword;
+    private String curEmail, curPassword, newPassword, adminId, verPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAdminSignInBinding.inflate(getLayoutInflater());
+        binding = ActivityAdminForgetPasswordBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
         binding.progressBar.setVisibility(View.INVISIBLE);
 
-        //sign in as admin
-        binding.btSignIn.setOnClickListener(new View.OnClickListener() {
+        binding.btReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.progressBar.setVisibility(View.VISIBLE);
                 curEmail = binding.email.getText().toString();
-                curPassword = binding.password.getText().toString();
-                AdminCheck();
+                curPassword = binding.curPassword.getText().toString();
+                newPassword = binding.newPassword.getText().toString();
+                binding.progressBar.setVisibility(View.VISIBLE);
+                resetPassword();
             }
         });
 
-        binding.resetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminSignIn.this, AdminForgetPassword.class);
-                startActivity(intent);
-            }
-        });
-
-        binding.requestAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(AdminSignIn.this, AdminRequestActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
-    private void AdminCheck(){
+    private void resetPassword(){
         databaseReference.child("VerifiedAdmin").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot childSnapshot: snapshot.getChildren()){
-                    checkId = childSnapshot.getKey();
+                    adminId = childSnapshot.getKey();
                 }
-                if(checkId==null){
-                    Toast.makeText(getApplicationContext(), "Email ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                if(adminId==null){
+                    //Admin doest exist
+                    Toast.makeText(getApplicationContext(),"Admin doesn't Exist",Toast.LENGTH_LONG).show();
                     binding.email.setText(null);
-                    binding.password.setText(null);
+                    binding.curPassword.setText(null);
+                    binding.newPassword.setText(null);
                     binding.progressBar.setVisibility(View.INVISIBLE);
-                }else {
+                }else{
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            verPassword = snapshot.child("VerifiedAdmin").child(checkId).child("AdminPassword").getValue().toString();
-                            if (verPassword.equals(curPassword)) {
-                                Intent intent = new Intent(AdminSignIn.this, AdminMainActivity.class);
-                                intent.putExtra("adminEmail", curEmail);
+                            verPassword = snapshot.child("VerifiedAdmin").child(adminId).child("AdminPassword").getValue().toString();
+                            if(verPassword.equals(curPassword)){
+                                databaseReference.child("VerifiedAdmin").child(adminId).child("AdminPassword").setValue(newPassword);
+                                Toast.makeText(getApplicationContext(),"Password Reset Successfully",Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(AdminForgetPassword.this,MainLogin.class);
                                 startActivity(intent);
                                 finish();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Email ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                            }else{
+                                //Current password doest match
+                                Toast.makeText(getApplicationContext(),"Current Password doesn't match",Toast.LENGTH_LONG).show();
                                 binding.email.setText(null);
-                                binding.password.setText(null);
+                                binding.curPassword.setText(null);
+                                binding.newPassword.setText(null);
                                 binding.progressBar.setVisibility(View.INVISIBLE);
                             }
                         }
