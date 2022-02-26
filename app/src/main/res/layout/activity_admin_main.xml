@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
                     android:background="@drawable/yellow_rounded_corner"
                     android:textSize="@dimen/_20ssp"
                     android:textColor="@color/textColor1"/>
@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
                     android:inputType="text"
                     android:background="@drawable/yellow_rounded_corner"
                     android:textSize="@dimen/_20ssp"
@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
                     android:background="@drawable/yellow_rounded_corner"
                     android:inputType="text"
                     android:textSize="@dimen/_20ssp"
@@ -136,6 +136,7 @@
                     android:text="Update"
                     android:background="@drawable/yellow_fill_rounded"
                     android:textSize="@dimen/_20ssp"
+                    android:padding="@dimen/_5sdp"
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
