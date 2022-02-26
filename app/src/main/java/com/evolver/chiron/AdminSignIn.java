@@ -40,12 +40,6 @@ public class AdminSignIn extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 curEmail = binding.email.getText().toString();
                 curPassword = binding.password.getText().toString();
-                /*new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        AdminCheck();
-                    }
-                },1000);*/
                 AdminCheck();
             }
         });
@@ -72,7 +66,7 @@ public class AdminSignIn extends AppCompatActivity {
                     binding.password.setText(null);
                     binding.progressBar.setVisibility(View.INVISIBLE);
                 }else {
-                    databaseReference.addValueEventListener(new ValueEventListener() {
+                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             verPassword = snapshot.child("VerifiedAdmin").child(checkId).child("AdminPassword").getValue().toString();

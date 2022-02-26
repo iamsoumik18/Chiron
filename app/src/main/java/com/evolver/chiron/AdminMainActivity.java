@@ -65,7 +65,7 @@ public class AdminMainActivity extends AppCompatActivity {
     }
 
     private void getAdminDetails(){
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 adminHospital = snapshot.child("VerifiedAdmin").child(adminKey).child("hospital").getValue().toString();
@@ -99,7 +99,7 @@ public class AdminMainActivity extends AppCompatActivity {
     }
 
     private void getOrganizationDetails(){
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 hospitalName = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("hospital").getValue().toString();
@@ -124,11 +124,4 @@ public class AdminMainActivity extends AppCompatActivity {
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(AdminMainActivity.this,MainLogin.class);
-        startActivity(intent);
-        finish();
-    }
 }
