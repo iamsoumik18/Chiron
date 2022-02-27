@@ -1,8 +1,11 @@
 package com.evolver.chiron;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,8 +16,11 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.ViewHolder> {
 
-    public UserAdapter(@NonNull FirebaseRecyclerOptions<UserModel> options) {
+    Context context;
+
+    public UserAdapter(@NonNull FirebaseRecyclerOptions<UserModel> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     @Override
@@ -22,6 +28,16 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
         holder.name.setText(userModel.getHospital());
         holder.bedCnt.setText(userModel.getBed());
         holder.price.setText(userModel.getPrice());
+        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),UserSelectedHospitalActivity.class);
+                intent.putExtra("name",userModel.getHospital());
+                intent.putExtra("bedCnt",userModel.getBed());
+                intent.putExtra("price",userModel.getPrice());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @NonNull
@@ -36,12 +52,14 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
         TextView name;
         TextView bedCnt;
         TextView price;
+        FrameLayout frameLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.hospitalName);
             bedCnt = itemView.findViewById(R.id.bedCnt);
             price = itemView.findViewById(R.id.price);
+            frameLayout = itemView.findViewById(R.id.frameLayout);
         }
     }
 

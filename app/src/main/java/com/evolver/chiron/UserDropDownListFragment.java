@@ -261,7 +261,7 @@ public class UserDropDownListFragment extends Fragment {
                                             .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), UserModel.class)
                                             .build();
 
-                            adapter = new UserAdapter(options);
+                            adapter = new UserAdapter(options,getContext());
                             adapter.startListening();
                             binding.progressBarContainer.setVisibility(View.GONE);
                             binding.recView.setAdapter(adapter);
