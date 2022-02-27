@@ -16,7 +16,11 @@ import android.widget.Toast;
 
 import com.evolver.chiron.databinding.FragmentGuestDropDownListBinding;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class GuestDropDownListFragment extends Fragment {
 
@@ -25,6 +29,8 @@ public class GuestDropDownListFragment extends Fragment {
     private ArrayAdapter<CharSequence> stateAdapter, districtAdapter;
 
     GuestAdapter adapter;
+
+    private int cnt;
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -239,20 +245,41 @@ public class GuestDropDownListFragment extends Fragment {
             }else{
                 binding.textViewIndianStates.setError(null);
                 binding.textViewIndianDistricts.setError(null);
-                Toast.makeText(getActivity(), "Selected State: "+selectedState+"\nSelected District: "+selectedDistrict, Toast.LENGTH_LONG).show();
+                binding.progressBarContainer.setVisibility(View.VISIBLE);
+                cnt = 0;
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict);
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot childSnapshot: snapshot.getChildren()){
+                            cnt++;
+                        }
+                        if(cnt!=0) {
+                            binding.detailsContainer.setVisibility(View.VISIBLE);
+                            binding.noResultContainer.setVisibility(View.GONE);
+                            binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                binding.detailsContainer.setVisibility(View.VISIBLE);
+                            FirebaseRecyclerOptions<GuestModel> options =
+                                    new FirebaseRecyclerOptions.Builder<GuestModel>()
+                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), GuestModel.class)
+                                            .build();
 
-                binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
+                            adapter = new GuestAdapter(options);
+                            adapter.startListening();
+                            binding.progressBarContainer.setVisibility(View.GONE);
+                            binding.recView.setAdapter(adapter);
+                        }else{
+                            binding.noResultContainer.setVisibility(View.VISIBLE);
+                            binding.detailsContainer.setVisibility(View.GONE);
+                            binding.progressBarContainer.setVisibility(View.GONE);
+                        }
+                    }
 
-                FirebaseRecyclerOptions<GuestModel> options =
-                        new FirebaseRecyclerOptions.Builder<GuestModel>()
-                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), GuestModel.class)
-                                .build();
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                adapter = new GuestAdapter(options);
-                adapter.startListening();
-                binding.recView.setAdapter(adapter);
+                    }
+                });
             }
         });
 

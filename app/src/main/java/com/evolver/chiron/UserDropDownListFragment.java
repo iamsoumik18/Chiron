@@ -15,7 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.evolver.chiron.databinding.FragmentUserDropDownListBinding;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class UserDropDownListFragment extends Fragment {
 
@@ -24,6 +28,8 @@ public class UserDropDownListFragment extends Fragment {
     private ArrayAdapter<CharSequence> stateAdapter, districtAdapter;
 
     UserAdapter adapter;
+
+    private int cnt;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -47,26 +53,15 @@ public class UserDropDownListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-
         binding = FragmentUserDropDownListBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -74,8 +69,6 @@ public class UserDropDownListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.detailsContainer.setVisibility(View.INVISIBLE);
 
         stateAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.array_indian_states,R.layout.spinner_layout);
 
@@ -86,8 +79,6 @@ public class UserDropDownListFragment extends Fragment {
         binding.spinnerIndianStates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
 
                 selectedState = binding.spinnerIndianStates.getSelectedItem().toString();
                 binding.textViewIndianStates.setError(null);
@@ -251,23 +242,43 @@ public class UserDropDownListFragment extends Fragment {
             }else{
                 binding.textViewIndianStates.setError(null);
                 binding.textViewIndianDistricts.setError(null);
-                Toast.makeText(getActivity(), "Selected State: "+selectedState+"\nSelected District: "+selectedDistrict, Toast.LENGTH_LONG).show();
+                binding.progressBarContainer.setVisibility(View.VISIBLE);
+                cnt = 0;
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict);
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot childSnapshot: snapshot.getChildren()){
+                            cnt++;
+                        }
+                        if(cnt!=0) {
+                            binding.detailsContainer.setVisibility(View.VISIBLE);
+                            binding.noResultContainer.setVisibility(View.GONE);
+                            binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                binding.detailsContainer.setVisibility(View.VISIBLE);
+                            FirebaseRecyclerOptions<UserModel> options =
+                                    new FirebaseRecyclerOptions.Builder<UserModel>()
+                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), UserModel.class)
+                                            .build();
 
-                binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
+                            adapter = new UserAdapter(options);
+                            adapter.startListening();
+                            binding.progressBarContainer.setVisibility(View.GONE);
+                            binding.recView.setAdapter(adapter);
+                        }else{
+                            binding.noResultContainer.setVisibility(View.VISIBLE);
+                            binding.detailsContainer.setVisibility(View.GONE);
+                            binding.progressBarContainer.setVisibility(View.GONE);
+                        }
+                    }
 
-                FirebaseRecyclerOptions<UserModel> options =
-                        new FirebaseRecyclerOptions.Builder<UserModel>()
-                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), UserModel.class)
-                                .build();
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                adapter = new UserAdapter(options);
-                adapter.startListening();
-                binding.recView.setAdapter(adapter);
+                    }
+                });
             }
         });
     }
-
 
 }
