@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.user;
 
 public class UserModel {
 

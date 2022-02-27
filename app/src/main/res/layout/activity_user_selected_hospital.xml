@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/mainBack"
     android:orientation="vertical"
-    tools:context=".UserSelectedHospitalActivity">
+    tools:context=".user.UserSelectedHospitalActivity">
 
     <TextView
         android:id="@+id/hospitalName"

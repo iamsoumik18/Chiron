@@ -1,6 +1,5 @@
 package com.evolver.chiron;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,25 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.evolver.chiron.admin.AdminSignIn;
 import com.evolver.chiron.databinding.ActivityMainLoginBinding;
+import com.evolver.chiron.guest.GuestMainActivity;
+import com.evolver.chiron.user.UserMainActivity;
+import com.evolver.chiron.user.UserSignIn;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainLogin extends AppCompatActivity {
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
-    ActivityMainLoginBinding  binding;
-
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference = database.getReference().child("User Detail");
-    FirebaseDatabase database2 = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference2 = database2.getReference().child("VerifiedAdmin");
+    ActivityMainLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +47,10 @@ public class MainLogin extends AppCompatActivity {
         });
 
         //Click Action for Guest Button
-        binding.requestButton.setOnClickListener(new View.OnClickListener() {
+        binding.guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainLogin.this,GuestMainActivity.class);
+                Intent i = new Intent(MainLogin.this, GuestMainActivity.class);
                 startActivity(i);
             }
         });
@@ -88,7 +81,7 @@ public class MainLogin extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if(user!=null){
-            Intent intent = new Intent(MainLogin.this,UserMainActivity.class);
+            Intent intent = new Intent(MainLogin.this, UserMainActivity.class);
             startActivity(intent);
             finish();
         }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/mainBack"
     android:weightSum="10"
-    tools:context=".AdminRequestActivity">
+    tools:context=".admin.AdminRequestActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edname"
+                    android:id="@+id/orgName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/username_icon"
@@ -77,7 +77,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edemail"
+                    android:id="@+id/orgEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/mail_icon"
@@ -111,7 +111,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edph"
+                    android:id="@+id/orgPhoneNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ph_icon"
@@ -145,7 +145,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edaddress"
+                    android:id="@+id/orgAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/address_icon"
@@ -180,7 +180,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/eddist"
+                    android:id="@+id/orgDistrict"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/dist_icon"
@@ -214,7 +214,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edstate"
+                    android:id="@+id/orgState"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/state_icon"
@@ -248,7 +248,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/edcountry"
+                    android:id="@+id/orgCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/country_icon"
@@ -281,7 +281,7 @@
                 android:layout_marginRight="@dimen/_43sdp">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btRequest"
+                    android:id="@+id/requestButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/yellow_fill_rounded"
@@ -291,6 +291,14 @@
                     android:textSize="@dimen/_15ssp" />
 
             </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_gravity="center"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_22sdp"/>
 
         </LinearLayout>
 

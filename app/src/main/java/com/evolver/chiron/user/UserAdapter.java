@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.user;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.evolver.chiron.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
@@ -31,7 +32,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),UserSelectedHospitalActivity.class);
+                Intent intent = new Intent(view.getContext(), UserSelectedHospitalActivity.class);
                 intent.putExtra("name",userModel.getHospital());
                 intent.putExtra("bedCnt",userModel.getBed());
                 intent.putExtra("price",userModel.getPrice());

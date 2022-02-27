@@ -12,34 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chiron">
         <activity
-            android:name=".UserSelectedHospitalActivity"
+            android:name=".user.UserSelectedHospitalActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminForgetPassword"
+            android:name=".admin.AdminForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".AdminRequestActivity"
+            android:name=".admin.AdminRequestActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminMainActivity"
+            android:name=".admin.AdminMainActivity"
             android:exported="false" />
         <activity
-            android:name=".GuestMainActivity"
+            android:name=".guest.GuestMainActivity"
             android:exported="false" />
         <activity
-            android:name=".UserMainActivity"
+            android:name=".user.UserMainActivity"
             android:exported="false" />
         <activity
-            android:name=".UserSignUp"
+            android:name=".user.UserSignUp"
             android:exported="false" />
         <activity
-            android:name=".UserForgetPassword"
+            android:name=".user.UserForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".UserSignIn"
+            android:name=".user.UserSignIn"
             android:exported="false" />
         <activity
-            android:name=".AdminSignIn"
+            android:name=".admin.AdminSignIn"
             android:exported="false" />
         <activity
             android:name=".MainLogin"

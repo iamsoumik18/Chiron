@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.evolver.chiron.MainLogin;
+import com.evolver.chiron.R;
 import com.evolver.chiron.databinding.ActivityUserMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -43,9 +45,6 @@ public class UserMainActivity extends AppCompatActivity {
 
         binding.tabLayout.getTabAt(0).setIcon(R.drawable.ic_account_tree);
         binding.tabLayout.getTabAt(1).setIcon(R.drawable.ic_mic);
-
-
-
 
     }
 
@@ -102,5 +101,12 @@ public class UserMainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 }

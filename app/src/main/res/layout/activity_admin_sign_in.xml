@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/mainBack"
     android:weightSum="10"
-    tools:context=".AdminSignIn">
+    tools:context=".admin.AdminSignIn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -107,7 +107,7 @@
             android:layout_marginRight="@dimen/_43sdp">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btSignIn"
+                android:id="@+id/signInButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/yellow_fill_rounded"
@@ -127,7 +127,7 @@
             android:fontFamily="@font/ubuntu_light"
             android:text="Reset Password"
             android:textColor="@color/textColor1"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/requestAdmin"

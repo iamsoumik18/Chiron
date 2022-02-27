@@ -107,14 +107,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/requestContainer"
+                android:id="@+id/guestContainer"
                 android:orientation="horizontal"
                 android:layout_margin="@dimen/_5sdp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/requestButton"
+                    android:id="@+id/guestButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/rounded_button"

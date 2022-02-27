@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.evolver.chiron.MainLogin;
 import com.evolver.chiron.databinding.ActivityAdminForgetPasswordBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -68,7 +69,7 @@ public class AdminForgetPassword extends AppCompatActivity {
                             if(verPassword.equals(curPassword)){
                                 databaseReference.child("VerifiedAdmin").child(adminId).child("AdminPassword").setValue(newPassword);
                                 Toast.makeText(getApplicationContext(),"Password Reset Successfully",Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(AdminForgetPassword.this,MainLogin.class);
+                                Intent intent = new Intent(AdminForgetPassword.this, MainLogin.class);
                                 startActivity(intent);
                                 finish();
                             }else{

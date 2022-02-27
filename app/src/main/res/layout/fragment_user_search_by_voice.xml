@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserSearchByVoiceFragment">
+    android:background="@color/mainBack"
+    android:orientation="vertical"
+    tools:context=".user.UserSearchByVoiceFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="Feature will be available soon.\nStay tuned."
+        android:textColor="@color/textColor1"
         android:textSize="@dimen/_30ssp"/>
 
-</FrameLayout>
+</LinearLayout>

@@ -1,11 +1,10 @@
-package com.evolver.chiron;
+package com.evolver.chiron.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -34,7 +33,7 @@ public class AdminSignIn extends AppCompatActivity {
         binding.progressBar.setVisibility(View.INVISIBLE);
 
         //sign in as admin
-        binding.btSignIn.setOnClickListener(new View.OnClickListener() {
+        binding.signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.progressBar.setVisibility(View.VISIBLE);

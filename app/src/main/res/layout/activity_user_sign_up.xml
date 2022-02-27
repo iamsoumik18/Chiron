@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/mainBack"
-    tools:context=".UserSignIn">
+    tools:context=".user.UserSignIn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -178,7 +178,7 @@
                 android:background="@drawable/yellow_rounded_corner">
 
                 <EditText
-                    android:id="@+id/phNo"
+                    android:id="@+id/phoneNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/phone_icon"
@@ -211,7 +211,7 @@
                 android:layout_marginRight="@dimen/_43sdp">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btlogin"
+                    android:id="@+id/signUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/yellow_fill_rounded"
@@ -223,7 +223,7 @@
             </RelativeLayout>
 
             <ProgressBar
-                android:id="@+id/pp"
+                android:id="@+id/progressBar"
                 android:layout_gravity="center"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="@dimen/_30sdp"

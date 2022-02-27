@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.guest;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.view.View;
 
+import com.evolver.chiron.R;
 import com.evolver.chiron.databinding.ActivityGuestMainBinding;
 
 import java.util.ArrayList;

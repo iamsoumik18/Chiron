@@ -1,4 +1,4 @@
-package com.evolver.chiron;
+package com.evolver.chiron.admin;
 
 import androidx.annotation.Discouraged;
 import androidx.annotation.NonNull;
