@@ -23,7 +23,7 @@ public class AdminMainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
 
-    String adminEmail, adminKey, adminHospital, adminState, adminDistrict, orgKey, hospitalName, bedCnt, price;
+    String adminEmail, adminKey, adminHospital, adminState, adminDistrict, orgKey, hospitalName, bedCnt, price, facilites, Phone, Addres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,9 +106,15 @@ public class AdminMainActivity extends AppCompatActivity {
                 hospitalName = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("hospital").getValue().toString();
                 bedCnt = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").getValue().toString();
                 price = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").getValue().toString();
+                Addres = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").getValue().toString();
+                Phone =  snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").getValue().toString();
+                facilites =  snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").getValue().toString();
                 binding.hospitalName.setText(hospitalName);
                 binding.bedCount.setText(bedCnt);
                 binding.price.setText(price);
+                binding.Addres.setText(Addres);
+                binding.Phone.setText(Phone);
+                binding.facilites.setText(facilites);
                 binding.progressBar.setVisibility(View.INVISIBLE);
             }
 
@@ -122,8 +128,14 @@ public class AdminMainActivity extends AppCompatActivity {
     private void setValue(){
         String bedCnt = binding.bedCount.getText().toString();
         String price = binding.price.getText().toString();
+        String facilites = binding.facilites.getText().toString();
+        String Phone = binding.Phone.getText().toString();
+        String Addres = binding.Addres.getText().toString();
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").setValue(bedCnt);
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").setValue(facilites);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").setValue(Phone);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").setValue(Addres);
         binding.progressBar.setVisibility(View.INVISIBLE);
     }
 

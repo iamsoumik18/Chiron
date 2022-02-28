@@ -23,5 +23,10 @@ public class UserSelectedHospitalActivity extends AppCompatActivity {
         binding.hospitalName.setText(intent.getStringExtra("name"));
         binding.bedCnt.setText(intent.getStringExtra("bedCnt"));
         binding.price.setText(intent.getStringExtra("price"));
+        binding.Addres.setText(intent.getStringExtra("Addres"));
+        binding.facilites.setText(intent.getStringExtra("facilites"));
+        binding.Phone.setText(intent.getStringExtra("Phone"));
+
+
     }
 }
