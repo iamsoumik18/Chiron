@@ -259,7 +259,7 @@ public class UserDropDownListFragment extends Fragment {
 
                             FirebaseRecyclerOptions<UserModel> options =
                                     new FirebaseRecyclerOptions.Builder<UserModel>()
-                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), UserModel.class)
+                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict).orderByChild("hospital"), UserModel.class)
                                             .build();
 
                             adapter = new UserAdapter(options,getContext());

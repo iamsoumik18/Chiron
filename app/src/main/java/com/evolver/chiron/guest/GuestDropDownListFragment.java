@@ -262,7 +262,7 @@ public class GuestDropDownListFragment extends Fragment {
 
                             FirebaseRecyclerOptions<GuestModel> options =
                                     new FirebaseRecyclerOptions.Builder<GuestModel>()
-                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict), GuestModel.class)
+                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict).orderByChild("hospital"), GuestModel.class)
                                             .build();
 
                             adapter = new GuestAdapter(options);
