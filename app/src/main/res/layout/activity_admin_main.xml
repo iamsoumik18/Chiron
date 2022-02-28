@@ -120,6 +120,92 @@
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Facilites: "
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <EditText
+                    android:id="@+id/facilites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:inputType="text"
+                    android:textSize="@dimen/_20ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Addres: "
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <EditText
+                    android:id="@+id/Addres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:inputType="text"
+                    android:textSize="@dimen/_20ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No: "
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <EditText
+                    android:id="@+id/Phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:inputType="text"
+                    android:textSize="@dimen/_20ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
