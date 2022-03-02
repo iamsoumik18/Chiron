@@ -114,7 +114,7 @@
                     android:id="@+id/callButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Call Now"
+                    android:text="Call"
                     android:fontFamily="@font/ubuntu_light"
                     android:background="@drawable/rounded_button"
                     android:textSize="@dimen/_18ssp"
