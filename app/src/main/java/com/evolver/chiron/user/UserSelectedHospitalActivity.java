@@ -1,10 +1,16 @@
 package com.evolver.chiron.user;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.evolver.chiron.databinding.ActivityUserSelectedHospitalBinding;
 
@@ -12,6 +18,8 @@ public class UserSelectedHospitalActivity extends AppCompatActivity {
 
     ActivityUserSelectedHospitalBinding binding;
     private String hospitalName, hospitalAddress, hospitalContact, hospitalFacilities, hospitalBedCnt, hospitalBedPrice;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +43,26 @@ public class UserSelectedHospitalActivity extends AppCompatActivity {
         binding.bedCnt.setText(hospitalBedCnt);
         binding.price.setText("Rs " + hospitalBedPrice);
 
+        //adding Phone call
+        binding.callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(Intent.ACTION_DIAL);
+                i.setData(Uri.parse("tel:"+hospitalContact));
+                startActivity(i);
+            }
+
+        });
+        binding.locateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:37.7749,-122.4192?q="+Uri.encode(hospitalAddress)));
+                startActivity(i);
+            }
+        });
+
     }
+
+
 }
