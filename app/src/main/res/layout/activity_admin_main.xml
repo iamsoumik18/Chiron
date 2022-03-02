@@ -49,7 +49,7 @@
                     android:text="Hospital Name: "
                     android:fontFamily="@font/ubuntu_light"
                     android:textColor="@color/textColor1"
-                    android:textSize="@dimen/_15ssp"/>
+                    android:textSize="@dimen/_13ssp"/>
 
                 <TextView
                     android:id="@+id/hospitalName"
@@ -58,7 +58,95 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:padding="@dimen/_10sdp"
                     android:background="@drawable/yellow_rounded_corner"
-                    android:textSize="@dimen/_20ssp"
+                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address: "
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No: "
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <EditText
+                    android:id="@+id/phoneNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:inputType="phone"
+                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/textColor1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_43sdp"
+                android:layout_marginRight="@dimen/_43sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Facilities:"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/textColor1"/>
+
+                <EditText
+                    android:id="@+id/facilities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/yellow_rounded_corner"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:minHeight="@dimen/_1sdp"
+                    android:textSize="@dimen/_18ssp"
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
@@ -77,7 +165,7 @@
                     android:text="No of Bed:"
                     android:fontFamily="@font/ubuntu_light"
                     android:textColor="@color/textColor1"
-                    android:textSize="@dimen/_15ssp"/>
+                    android:textSize="@dimen/_13ssp"/>
 
                 <EditText
                     android:id="@+id/bedCount"
@@ -87,7 +175,7 @@
                     android:padding="@dimen/_10sdp"
                     android:inputType="text"
                     android:background="@drawable/yellow_rounded_corner"
-                    android:textSize="@dimen/_20ssp"
+                    android:textSize="@dimen/_18ssp"
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
@@ -103,9 +191,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Price(per Bed) Rs: "
+                    android:text="Price(per Night) of Bed Rs: "
                     android:fontFamily="@font/ubuntu_light"
-                    android:textSize="@dimen/_15ssp"
+                    android:textSize="@dimen/_13ssp"
                     android:textColor="@color/textColor1"/>
 
                 <EditText
@@ -116,96 +204,10 @@
                     android:padding="@dimen/_10sdp"
                     android:background="@drawable/yellow_rounded_corner"
                     android:inputType="text"
-                    android:textSize="@dimen/_20ssp"
+                    android:textSize="@dimen/_18ssp"
                     android:textColor="@color/textColor1"/>
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_43sdp"
-                android:layout_marginRight="@dimen/_43sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Facilites: "
-                    android:fontFamily="@font/ubuntu_light"
-                    android:textSize="@dimen/_15ssp"
-                    android:textColor="@color/textColor1"/>
-
-                <EditText
-                    android:id="@+id/facilites"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_10sdp"
-                    android:background="@drawable/yellow_rounded_corner"
-                    android:inputType="text"
-                    android:textSize="@dimen/_20ssp"
-                    android:textColor="@color/textColor1"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_43sdp"
-                android:layout_marginRight="@dimen/_43sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Addres: "
-                    android:fontFamily="@font/ubuntu_light"
-                    android:textSize="@dimen/_15ssp"
-                    android:textColor="@color/textColor1"/>
-
-                <EditText
-                    android:id="@+id/Addres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_10sdp"
-                    android:background="@drawable/yellow_rounded_corner"
-                    android:inputType="text"
-                    android:textSize="@dimen/_20ssp"
-                    android:textColor="@color/textColor1"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_43sdp"
-                android:layout_marginRight="@dimen/_43sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact No: "
-                    android:fontFamily="@font/ubuntu_light"
-                    android:textSize="@dimen/_15ssp"
-                    android:textColor="@color/textColor1"/>
-
-                <EditText
-                    android:id="@+id/Phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:padding="@dimen/_10sdp"
-                    android:background="@drawable/yellow_rounded_corner"
-                    android:inputType="text"
-                    android:textSize="@dimen/_20ssp"
-                    android:textColor="@color/textColor1"/>
-
-            </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:text="Update"
                     android:background="@drawable/yellow_fill_rounded"
-                    android:textSize="@dimen/_20ssp"
+                    android:textSize="@dimen/_18ssp"
                     android:padding="@dimen/_5sdp"
                     android:textColor="@color/textColor1"/>
 

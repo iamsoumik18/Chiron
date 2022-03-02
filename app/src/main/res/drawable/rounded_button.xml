@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" android:padding="10dp">
+    android:shape="rectangle" android:padding="@dimen/_10sdp">
     <!-- you can use any color you want I used here gray color-->
     <stroke
         android:height="1.0dip"
@@ -8,5 +8,5 @@
         android:color="#ffc661" />
 
     <solid android:color="@android:color/transparent"/>
-    <corners android:radius="125dp"/>
+    <corners android:radius="@dimen/_75sdp"/>
 </shape>

@@ -22,7 +22,7 @@ public class GuestAdapter extends FirebaseRecyclerAdapter<GuestModel, GuestAdapt
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull GuestModel guestModel) {
         holder.name.setText(guestModel.getHospital());
         holder.bedCnt.setText(guestModel.getBed());
-        holder.price.setText(guestModel.getPrice());
+        holder.price.setText("Rs "+guestModel.getPrice());
     }
 
     @NonNull

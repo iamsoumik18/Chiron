@@ -1,6 +1,5 @@
 package com.evolver.chiron.admin;
 
-import androidx.annotation.Discouraged;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -112,9 +111,9 @@ public class AdminMainActivity extends AppCompatActivity {
                 binding.hospitalName.setText(hospitalName);
                 binding.bedCount.setText(bedCnt);
                 binding.price.setText(price);
-                binding.Addres.setText(Addres);
-                binding.Phone.setText(Phone);
-                binding.facilites.setText(facilites);
+                binding.address.setText(Addres);
+                binding.phoneNo.setText(Phone);
+                binding.facilities.setText(facilites);
                 binding.progressBar.setVisibility(View.INVISIBLE);
             }
 
@@ -128,14 +127,14 @@ public class AdminMainActivity extends AppCompatActivity {
     private void setValue(){
         String bedCnt = binding.bedCount.getText().toString();
         String price = binding.price.getText().toString();
-        String facilites = binding.facilites.getText().toString();
-        String Phone = binding.Phone.getText().toString();
-        String Addres = binding.Addres.getText().toString();
+        String facilities = binding.facilities.getText().toString();
+        String phone = binding.phoneNo.getText().toString();
+        String address = binding.address.getText().toString();
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").setValue(bedCnt);
         databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").setValue(facilites);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").setValue(Phone);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").setValue(Addres);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").setValue(facilities);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").setValue(phone);
+        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").setValue(address);
         binding.progressBar.setVisibility(View.INVISIBLE);
     }
 

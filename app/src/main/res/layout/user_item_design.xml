@@ -31,18 +31,9 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Hospital Name:"
-                        android:fontFamily="@font/ubuntu_light"
-                        android:textColor="@color/textColor1"
-                        android:textSize="@dimen/_15ssp"/>
-
-                    <TextView
                         android:id="@+id/hospitalName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
                         android:textColor="@color/textColor1"
                         android:textSize="@dimen/_20ssp" />
 
@@ -80,7 +71,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price(per Bed) Rs: "
+                        android:text="Price(per Night) of Bed: "
                         android:fontFamily="@font/ubuntu_light"
                         android:textColor="@color/textColor1"
                         android:textSize="@dimen/_15ssp"/>

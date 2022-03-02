@@ -11,6 +11,7 @@ import com.evolver.chiron.databinding.ActivityUserSelectedHospitalBinding;
 public class UserSelectedHospitalActivity extends AppCompatActivity {
 
     ActivityUserSelectedHospitalBinding binding;
+    private String hospitalName, hospitalAddress, hospitalContact, hospitalFacilities, hospitalBedCnt, hospitalBedPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +21,19 @@ public class UserSelectedHospitalActivity extends AppCompatActivity {
         setContentView(view);
 
         Intent intent = getIntent();
-        binding.hospitalName.setText(intent.getStringExtra("name"));
-        binding.bedCnt.setText(intent.getStringExtra("bedCnt"));
-        binding.price.setText(intent.getStringExtra("price"));
-        binding.Addres.setText(intent.getStringExtra("Addres"));
-        binding.facilites.setText(intent.getStringExtra("facilites"));
-        binding.Phone.setText(intent.getStringExtra("Phone"));
+        hospitalName = intent.getStringExtra("name");
+        hospitalAddress = intent.getStringExtra("address");
+        hospitalContact = intent.getStringExtra("phoneNo");
+        hospitalFacilities = intent.getStringExtra("facilities");
+        hospitalBedCnt = intent.getStringExtra("bedCnt");
+        hospitalBedPrice = intent.getStringExtra("price");
 
+        binding.hospitalName.setText(hospitalName);
+        binding.address.setText(hospitalAddress);
+        binding.phoneNo.setText(hospitalContact);
+        binding.facilities.setText(hospitalFacilities);
+        binding.bedCnt.setText(hospitalBedCnt);
+        binding.price.setText("Rs " + hospitalBedPrice);
 
     }
 }
