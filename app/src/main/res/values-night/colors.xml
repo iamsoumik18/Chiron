@@ -9,7 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="appTheme">#ffc661</color>
     <color name="mainBack">#292929</color>
-    <color name="textColor1">#ffffff</color>
-    <color name="iconTint">#ffffff</color>
     <color name="cardBack">#161616</color>
+    <color name="splashFont1">#ffc661</color>
+    <color name="splashFont2">#898989</color>
+    <color name="splashFont3">#989898</color>
+    <color name="textColor1">#ffffff</color>
+    <color name="textColor2">#aeaeae</color>
+    <color name="textColor3">#d3d3d3</color>
+    <color name="iconTint">#ffffff</color>
 </resources>
