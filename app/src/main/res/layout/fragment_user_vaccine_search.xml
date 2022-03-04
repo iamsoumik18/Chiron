@@ -57,16 +57,59 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/centerRecyclerContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_5sdp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/centerRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/user_vaccine_item_design"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/noCenterContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/ic_error"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Center Found!"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/textColor1"
+                android:fontFamily="@font/ubuntu_light"
+                android:textSize="@dimen/_25ssp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progressBarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pp"
+                android:layout_gravity="center"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_22sdp"/>
 
         </LinearLayout>
 

@@ -90,6 +90,7 @@ public class UserVaccineSearchFragment extends Fragment {
             public void onClick(View view) {
                 String pincode = binding.pincode.getText().toString();
                 closeKeyboard();
+                binding.progressBarContainer.setVisibility(View.VISIBLE);
                 if(pincode.length()==6){
                     centerList.clear();
                     Calendar c = Calendar.getInstance();
@@ -102,7 +103,11 @@ public class UserVaccineSearchFragment extends Fragment {
                         getAppointment(pincode,dateStr);
                     },year,month,day);
                     dpd.show();
+                }else{
+                    Toast.makeText(getActivity(),"Give proper PIN code",Toast.LENGTH_SHORT).show();
+                    binding.pincode.setText(null);
                 }
+                binding.progressBarContainer.setVisibility(View.GONE);
             }
         });
     }
@@ -114,8 +119,12 @@ public class UserVaccineSearchFragment extends Fragment {
             try {
                 JSONArray centerArray = response.getJSONArray("centers");
                 if(centerArray.length()==0){
-                    Toast.makeText(getContext(),"No center available",Toast.LENGTH_SHORT).show();
+                    binding.centerRecyclerContainer.setVisibility(View.GONE);
+                    binding.noCenterContainer.setVisibility(View.VISIBLE);
+                    return;
                 }
+                binding.noCenterContainer.setVisibility(View.GONE);
+                binding.centerRecyclerContainer.setVisibility(View.VISIBLE);
                 for(int i=0; i<centerArray.length(); i++){
                     JSONObject centerObj = centerArray.getJSONObject(i);
                     String centerName = centerObj.getString("name");
