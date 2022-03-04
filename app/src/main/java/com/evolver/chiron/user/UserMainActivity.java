@@ -41,10 +41,12 @@ public class UserMainActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 0);
         viewPagerAdapter.addFragment(new UserDropDownListFragment(),"Search By List");
         viewPagerAdapter.addFragment(new UserSearchByVoiceFragment(),"Search By Voice");
+        viewPagerAdapter.addFragment(new UserVaccineSearchFragment(),"Search Vaccine");
         binding.viewPager.setAdapter(viewPagerAdapter);
 
         binding.tabLayout.getTabAt(0).setIcon(R.drawable.ic_account_tree);
         binding.tabLayout.getTabAt(1).setIcon(R.drawable.ic_mic);
+        binding.tabLayout.getTabAt(2).setIcon(R.drawable.ic_syringe);
 
     }
 

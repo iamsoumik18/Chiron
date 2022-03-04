@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:id="@+id/cardView"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_25sdp">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardBack"
+            android:padding="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_center_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Center Name"
+                    android:textColor="@color/textColor1"
+                    android:textSize="@dimen/_20ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_8sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address:"
+                        android:textColor="@color/textColor1"
+                        android:fontFamily="@font/ubuntu_light"
+                        android:textSize="@dimen/_13ssp"/>
+
+                    <TextView
+                        android:id="@+id/tv_center_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Center Address"
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_17ssp"
+                        android:layout_marginTop="@dimen/_2sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_8sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Timings: "
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/ubuntu_light"/>
+
+                    <TextView
+                        android:id="@+id/tv_center_timing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Center Timings"
+                        android:textColor="@color/textColor1"
+                        android:textSize="@dimen/_18ssp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vaccine Name:"
+                            android:textColor="@color/textColor1"
+                            android:fontFamily="@font/ubuntu_light"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13ssp"/>
+
+                        <TextView
+                            android:id="@+id/tv_vaccine_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vaccine Name"
+                            android:textColor="@color/textColor1"
+                            android:gravity="center"
+                            android:textSize="@dimen/_18ssp"
+                            android:layout_marginTop="@dimen/_2sdp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fee Type:"
+                            android:textColor="@color/textColor1"
+                            android:fontFamily="@font/ubuntu_light"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13ssp"/>
+
+                        <TextView
+                            android:id="@+id/tv_fee_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fee Type"
+                            android:textColor="@color/textColor1"
+                            android:gravity="center"
+                            android:textSize="@dimen/_18ssp"
+                            android:layout_marginTop="@dimen/_2sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Age Limit:"
+                            android:textColor="@color/textColor1"
+                            android:fontFamily="@font/ubuntu_light"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13ssp"/>
+
+                        <TextView
+                            android:id="@+id/tv_age_limit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Age Limit"
+                            android:textColor="@color/textColor1"
+                            android:gravity="center"
+                            android:textSize="@dimen/_18ssp"
+                            android:layout_marginTop="@dimen/_2sdp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Availability:"
+                            android:textColor="@color/textColor1"
+                            android:fontFamily="@font/ubuntu_light"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13ssp"/>
+
+                        <TextView
+                            android:id="@+id/tv_availability"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Availability"
+                            android:textColor="@color/textColor1"
+                            android:gravity="center"
+                            android:textSize="@dimen/_18ssp"
+                            android:layout_marginTop="@dimen/_2sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
