@@ -12,8 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chiron">
         <activity
+            android:name=".user.UserCovidTrackerCountryDetailAnalysis"
+            android:exported="false"
+            android:parentActivityName=".user.UserCovidCountryTracker"/>
+        <activity
+            android:name=".user.UserCovidCountryTracker"
+            android:exported="false"
+            />
+        <activity
             android:name=".SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

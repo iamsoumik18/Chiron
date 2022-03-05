@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.UserCovidTrackerFragment"
+    android:padding="10dp"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/GlobalStat"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Global Stat"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_below="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Cases"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Case"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/Casesno"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_below="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Todaycases"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Today Case"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/TodayCasesno"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_below="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Death"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Death"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/Deathno"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_below="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/TodayDeath"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="TodayDeath"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/TodayDeathNo"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear6"
+        android:layout_below="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Recovery"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Recovery"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/RecoveryNo"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear7"
+        android:layout_below="@+id/linear6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Active"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Active"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/Activeno"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear8"
+        android:layout_below="@+id/linear7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/Critical"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Critical"
+            android:textColor="#D5CACA"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/CriticalNo"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="12345"
+            android:textColor="#D5CACA"
+            android:textColorHint="#E1D3D3"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear9"
+        android:layout_below="@+id/linear8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear10"
+        android:layout_below="@+id/linear9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
