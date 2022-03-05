@@ -42,11 +42,13 @@ public class UserMainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(new UserDropDownListFragment(),"Search By List");
         viewPagerAdapter.addFragment(new UserSearchByVoiceFragment(),"Search By Voice");
         viewPagerAdapter.addFragment(new UserVaccineSearchFragment(),"Search Vaccine");
+        viewPagerAdapter.addFragment(new UserCovidTrackerFragment(), "Covid Tracker");
         binding.viewPager.setAdapter(viewPagerAdapter);
 
         binding.tabLayout.getTabAt(0).setIcon(R.drawable.ic_account_tree);
         binding.tabLayout.getTabAt(1).setIcon(R.drawable.ic_mic);
         binding.tabLayout.getTabAt(2).setIcon(R.drawable.ic_syringe);
+        binding.tabLayout.getTabAt(3).setIcon(R.drawable.ic_coronavirus);
 
     }
 
