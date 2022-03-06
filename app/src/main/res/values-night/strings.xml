@@ -2,6 +2,11 @@
     <string name="app_name">Chiron</string>
     <string name="welcome_message">Welcome</string>
 
+    <string-array name="array_country">
+        <item>Select Your Country</item>
+        <item>India</item>
+    </string-array>
+
     <string-array name="array_indian_states">
         <item>Select Your State</item>
         <item>Andaman and Nicobar Islands</item><item>Andhra Pradesh</item><item>Arunachal Pradesh</item><item>Assam</item>

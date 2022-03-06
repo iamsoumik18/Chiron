@@ -87,7 +87,7 @@ public class UserCovidTrackerFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getActivity(), UserCovidCountryTracker.class);
+                Intent i = new Intent(getActivity(), UserCovidCountryActivity.class);
                 startActivity(i);
             }
         });
