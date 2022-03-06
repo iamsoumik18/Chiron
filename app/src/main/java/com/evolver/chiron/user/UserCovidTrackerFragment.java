@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.evolver.chiron.user.ModelCovidTracker.GlobalResponse;
 import com.evolver.chiron.user.NetworkCovidTracker.ApiClientPrivate;
@@ -24,11 +25,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UserCovidTrackerFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class UserCovidTrackerFragment extends Fragment {
     TextView cases,todayCases,deaths,todayDeaths,recovered, active,critical,affectedCountries;
     Button CountryTraker;
@@ -36,28 +32,16 @@ public class UserCovidTrackerFragment extends Fragment {
 
     FragmentUserCovidTrackerBinding binding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public UserCovidTrackerFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserCovidTrakerFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UserCovidTrackerFragment newInstance(String param1, String param2) {
         UserCovidTrackerFragment fragment = new UserCovidTrackerFragment();
         Bundle args = new Bundle();
@@ -79,7 +63,6 @@ public class UserCovidTrackerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentUserCovidTrackerBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -108,7 +91,7 @@ public class UserCovidTrackerFragment extends Fragment {
                 startActivity(i);
             }
         });
-        
+
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void apiCall() {
@@ -137,16 +120,16 @@ public class UserCovidTrackerFragment extends Fragment {
                     recovered.setText(strecovered);
                     active.setText(stActive);
                     critical.setText(stCritical);
-
-
+                    affectedCountries.setText(AffectedCountry);
 
                 }
             }
 
             @Override
             public void onFailure(Call<GlobalResponse> call, Throwable t) {
-
+                Toast.makeText(getContext(),"There is something wrong. Please try again later",Toast.LENGTH_SHORT).show();
             }
         });
+        binding.progressBar.setVisibility(View.INVISIBLE);
     }
 }
