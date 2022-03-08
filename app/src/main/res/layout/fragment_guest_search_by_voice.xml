@@ -7,12 +7,181 @@
     android:orientation="vertical"
     tools:context=".guest.GuestSearchByVoiceFragment">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_8sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvIndianStatesHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="State"
+                android:fontFamily="@font/ubuntu"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/textColor1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvSelectedState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Please say your State"
+                    android:textColor="@color/textColor1"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/yellow_rounded_corner" />
+
+                <ImageView
+                    android:id="@+id/stateVoiceButton"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_weight="4"
+                    android:src="@drawable/ic_mic"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvIndianDistrictsHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="District"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/textColor1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvSelectedDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Please say your District"
+                    android:textColor="@color/textColor1"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/yellow_rounded_corner" />
+
+                <ImageView
+                    android:id="@+id/districtVoiceButton"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_weight="4"
+                    android:src="@drawable/ic_mic"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/ubuntu"
+                android:text="Search"
+                android:textAlignment="center"
+                android:textColor="@color/textColor1"
+                android:textSize="@dimen/_15ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailsContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noResultContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:text="Feature will be available soon.\nStay tuned."
-        android:textColor="@color/textColor1"
-        android:textSize="@dimen/_30ssp"/>
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/ic_error"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Result Found!"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/textColor1"
+            android:fontFamily="@font/ubuntu_light"
+            android:textSize="@dimen/_25ssp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progressBarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pp"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_22sdp"/>
+
+    </LinearLayout>
 
 </LinearLayout>
