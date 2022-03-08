@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.evolver.chiron.AboutPopUpFragment;
 import com.evolver.chiron.MainLogin;
 import com.evolver.chiron.R;
 import com.evolver.chiron.databinding.ActivityUserMainBinding;
@@ -94,7 +94,7 @@ public class UserMainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                showAbout();
                 return true;
             case R.id.signOut:
                 auth.signOut();
@@ -105,6 +105,12 @@ public class UserMainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showAbout() {
+        FragmentManager fm = getSupportFragmentManager();
+        AboutPopUpFragment aboutPopUpFragment = new AboutPopUpFragment();
+        aboutPopUpFragment.show(fm, "fragment_about_pop_up");
     }
 
     @Override

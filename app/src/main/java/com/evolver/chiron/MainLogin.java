@@ -1,11 +1,11 @@
 package com.evolver.chiron;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.evolver.chiron.admin.AdminSignIn;
 import com.evolver.chiron.databinding.ActivityMainLoginBinding;
@@ -14,7 +14,6 @@ import com.evolver.chiron.user.UserMainActivity;
 import com.evolver.chiron.user.UserSignIn;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainLogin extends AppCompatActivity {
 
@@ -62,10 +61,16 @@ public class MainLogin extends AppCompatActivity {
         binding.aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"About",Toast.LENGTH_SHORT).show();
+                showAbout();
             }
         });
 
+    }
+
+    private void showAbout() {
+        FragmentManager fm = getSupportFragmentManager();
+        AboutPopUpFragment aboutPopUpFragment = new AboutPopUpFragment();
+        aboutPopUpFragment.show(fm, "fragment_about_pop_up");
     }
 
     /*

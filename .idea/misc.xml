@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/background_about_popup.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_account_tree.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_app_icon.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_arrow_back.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_check.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_close.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_edit.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_engineering.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/ic_error.xml" value="0.243" />
@@ -22,6 +24,7 @@
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/rounded_button.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/yellow_fill_rounded.xml" value="0.243" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/drawable/yellow_rounded_corner.xml" value="0.243" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/about_popup.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_forget_password.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_admin_request.xml" value="0.22592592592592592" />
@@ -43,6 +46,7 @@
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_selected_hospital.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_sign_in.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/activity_user_sign_up.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_about_pop_up.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_drop_down_list.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_guest_drop_down_list.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/iamso/Desktop/Chiron/app/src/main/res/layout/fragment_guest_search_by_voice.xml" value="0.22592592592592592" />
