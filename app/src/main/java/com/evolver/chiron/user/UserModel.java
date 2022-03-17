@@ -2,72 +2,72 @@ package com.evolver.chiron.user;
 
 public class UserModel {
 
-    String hospital;
-    String bed;
-    String price;
-    String Phone;
-    String facilites;
-    String Addres;
+    String Hospital;
+    String BedCount;
+    String PricePerBed;
+    String PhoneNo;
+    String Facilities;
+    String Address;
 
 
     public UserModel(){
 
     }
 
-    public UserModel(String hospital, String bed, String price, String Phone, String facilites, String Addres ) {
-        this.hospital = hospital;
-        this.bed = bed;
-        this.price = price;
-        this.Addres = Addres;
-        this.facilites = facilites;
-        this.Phone = Phone;
-    }
-
-    public String getPhone() {
-        return Phone;
-    }
-
-    public void setPhone(String phone) {
-        Phone = phone;
-    }
-
-    public String getFacilites() {
-        return facilites;
-    }
-
-    public void setFacilites(String facilites) {
-        this.facilites = facilites;
-    }
-
-    public String getAddres() {
-        return Addres;
-    }
-
-    public void setAddres(String addres) {
-        Addres = addres;
+    public UserModel(String Address, String BedCount, String Facilities, String Hospital, String PhoneNo, String PricePerBed) {
+        this.Hospital = Hospital;
+        this.BedCount = BedCount;
+        this.PricePerBed = PricePerBed;
+        this.Address = Address;
+        this.Facilities = Facilities;
+        this.PhoneNo = PhoneNo;
     }
 
     public String getHospital() {
-        return hospital;
+        return Hospital;
     }
 
     public void setHospital(String hospital) {
-        this.hospital = hospital;
+        Hospital = hospital;
     }
 
-    public String getBed() {
-        return bed;
+    public String getBedCount() {
+        return BedCount;
     }
 
-    public void setBed(String bed) {
-        this.bed = bed;
+    public void setBedCount(String bedCount) {
+        BedCount = bedCount;
     }
 
-    public String getPrice() {
-        return price;
+    public String getPricePerBed() {
+        return PricePerBed;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPricePerBed(String pricePerBed) {
+        PricePerBed = pricePerBed;
+    }
+
+    public String getPhoneNo() {
+        return PhoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        PhoneNo = phoneNo;
+    }
+
+    public String getFacilities() {
+        return Facilities;
+    }
+
+    public void setFacilities(String facilities) {
+        Facilities = facilities;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
     }
 }

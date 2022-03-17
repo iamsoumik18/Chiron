@@ -86,12 +86,11 @@ public class UserSignUp extends AppCompatActivity {
         String phoneNo = binding.phoneNo.getText().toString();
         String userId = auth.getUid();
 
-        databaseReference.child("User Detail").child(userId).child("name").setValue(name);
-        databaseReference.child("User Detail").child(userId).child("EMAIL").setValue(email);
-        databaseReference.child("User Detail").child(userId).child("password").setValue(password);
-        databaseReference.child("User Detail").child(userId).child("adress").setValue(address);
-        databaseReference.child("User Detail").child(userId).child("phone no").setValue(phoneNo);
-        databaseReference.child("User Detail").child(userId).child("flag").setValue(0);
+        databaseReference.child("UserDetails").child(userId).child("Name").setValue(name);
+        databaseReference.child("UserDetails").child(userId).child("Email").setValue(email);
+        databaseReference.child("UserDetails").child(userId).child("Password").setValue(password);
+        databaseReference.child("UserDetails").child(userId).child("Address").setValue(address);
+        databaseReference.child("UserDetails").child(userId).child("PhoneNo").setValue(phoneNo);
     }
 
 }

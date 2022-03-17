@@ -245,7 +245,7 @@ public class UserDropDownListFragment extends Fragment {
                 binding.textViewIndianDistricts.setError(null);
                 binding.progressBarContainer.setVisibility(View.VISIBLE);
                 cnt = 0;
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict);
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organizations").child(selectedState).child(selectedDistrict);
                 ref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -259,7 +259,7 @@ public class UserDropDownListFragment extends Fragment {
 
                             FirebaseRecyclerOptions<UserModel> options =
                                     new FirebaseRecyclerOptions.Builder<UserModel>()
-                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict).orderByChild("hospital"), UserModel.class)
+                                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Organizations").child(selectedState).child(selectedDistrict).orderByChild("Hospital"), UserModel.class)
                                             .build();
 
                             adapter = new UserAdapter(options,getContext());

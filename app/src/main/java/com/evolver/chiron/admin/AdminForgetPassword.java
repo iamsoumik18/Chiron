@@ -48,7 +48,7 @@ public class AdminForgetPassword extends AppCompatActivity {
     }
 
     private void resetPassword(){
-        databaseReference.child("VerifiedAdmin").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("VerifiedAdmins").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot childSnapshot: snapshot.getChildren()){
@@ -65,9 +65,9 @@ public class AdminForgetPassword extends AppCompatActivity {
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            verPassword = snapshot.child("VerifiedAdmin").child(adminId).child("AdminPassword").getValue().toString();
+                            verPassword = snapshot.child("VerifiedAdmins").child(adminId).child("AdminPassword").getValue().toString();
                             if(verPassword.equals(curPassword)){
-                                databaseReference.child("VerifiedAdmin").child(adminId).child("AdminPassword").setValue(newPassword);
+                                databaseReference.child("VerifiedAdmins").child(adminId).child("AdminPassword").setValue(newPassword);
                                 Toast.makeText(getApplicationContext(),"Password Reset Successfully",Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(AdminForgetPassword.this, MainLogin.class);
                                 startActivity(intent);

@@ -2,41 +2,41 @@ package com.evolver.chiron.guest;
 
 public class GuestModel {
 
-    String hospital;
-    String bed;
-    String price;
+    String Hospital;
+    String BedCount;
+    String PricePerBed;
 
     public GuestModel(){
 
     }
 
-    public GuestModel(String hospital, String bed, String price) {
-        this.hospital = hospital;
-        this.bed = bed;
-        this.price = price;
+    public GuestModel(String Hospital, String BedCount, String PricePerBed) {
+        this.Hospital = Hospital;
+        this.BedCount = BedCount;
+        this.PricePerBed = PricePerBed;
     }
 
     public String getHospital() {
-        return hospital;
+        return Hospital;
     }
 
     public void setHospital(String hospital) {
-        this.hospital = hospital;
+        Hospital = hospital;
     }
 
-    public String getBed() {
-        return bed;
+    public String getBedCount() {
+        return BedCount;
     }
 
-    public void setBed(String bed) {
-        this.bed = bed;
+    public void setBedCount(String bedCount) {
+        BedCount = bedCount;
     }
 
-    public String getPrice() {
-        return price;
+    public String getPricePerBed() {
+        return PricePerBed;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPricePerBed(String pricePerBed) {
+        PricePerBed = pricePerBed;
     }
 }

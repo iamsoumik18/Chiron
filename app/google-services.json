@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "194370236425",
-    "project_id": "hosptial-details",
-    "storage_bucket": "hosptial-details.appspot.com"
+    "project_number": "125502457034",
+    "firebase_url": "https://chiron-cfc83-default-rtdb.firebaseio.com",
+    "project_id": "chiron-cfc83",
+    "storage_bucket": "chiron-cfc83.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:194370236425:android:caeff87fd2e02138eb08d8",
+        "mobilesdk_app_id": "1:125502457034:android:495f16f3153a8f29a62033",
         "android_client_info": {
           "package_name": "com.evolver.chiron"
         }
       },
       "oauth_client": [
         {
-          "client_id": "194370236425-ku6ho2hdcfpcig97dlfgbpl1fvo0hs5o.apps.googleusercontent.com",
+          "client_id": "125502457034-rnf9o7h62dfkol7pt1jiq6t3ti4qds7f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCAwHsdn-wwDnCOjaQT8_MecerPCOV865o"
+          "current_key": "AIzaSyBQf8U5xBLTu6VCXYYEiFZsROVRbRQvxIA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "194370236425-ku6ho2hdcfpcig97dlfgbpl1fvo0hs5o.apps.googleusercontent.com",
+              "client_id": "125502457034-rnf9o7h62dfkol7pt1jiq6t3ti4qds7f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -61,7 +61,7 @@ public class AdminSignIn extends AppCompatActivity {
     }
 
     private void AdminCheck(){
-        databaseReference.child("VerifiedAdmin").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("VerifiedAdmins").orderByChild("AdminEmail").equalTo(curEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot childSnapshot: snapshot.getChildren()){
@@ -76,7 +76,7 @@ public class AdminSignIn extends AppCompatActivity {
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            verPassword = snapshot.child("VerifiedAdmin").child(checkId).child("AdminPassword").getValue().toString();
+                            verPassword = snapshot.child("VerifiedAdmins").child(checkId).child("AdminPassword").getValue().toString();
                             if (verPassword.equals(curPassword)) {
                                 Intent intent = new Intent(AdminSignIn.this, AdminMainActivity.class);
                                 intent.putExtra("adminEmail", curEmail);

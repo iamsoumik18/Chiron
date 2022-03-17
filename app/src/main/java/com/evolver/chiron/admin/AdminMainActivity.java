@@ -48,7 +48,7 @@ public class AdminMainActivity extends AppCompatActivity {
     }
 
     private void getAdminKey(){
-        databaseReference.child("VerifiedAdmin").orderByChild("AdminEmail").equalTo(adminEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("VerifiedAdmins").orderByChild("AdminEmail").equalTo(adminEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot childSnapshot: snapshot.getChildren()){
@@ -68,9 +68,9 @@ public class AdminMainActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                adminHospital = snapshot.child("VerifiedAdmin").child(adminKey).child("hospital").getValue().toString();
-                adminState = snapshot.child("VerifiedAdmin").child(adminKey).child("State").getValue().toString();
-                adminDistrict = snapshot.child("VerifiedAdmin").child(adminKey).child("District").getValue().toString();
+                adminHospital = snapshot.child("VerifiedAdmins").child(adminKey).child("Hospital").getValue().toString();
+                adminState = snapshot.child("VerifiedAdmins").child(adminKey).child("State").getValue().toString();
+                adminDistrict = snapshot.child("VerifiedAdmins").child(adminKey).child("District").getValue().toString();
                 getOrganizationKey();
             }
 
@@ -82,7 +82,7 @@ public class AdminMainActivity extends AppCompatActivity {
     }
 
     private void getOrganizationKey(){
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).orderByChild("hospital").equalTo(adminHospital).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).orderByChild("Hospital").equalTo(adminHospital).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot childSnapshot: snapshot.getChildren()){
@@ -102,12 +102,12 @@ public class AdminMainActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                hospitalName = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("hospital").getValue().toString();
-                bedCnt = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").getValue().toString();
-                price = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").getValue().toString();
-                Addres = snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").getValue().toString();
-                Phone =  snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").getValue().toString();
-                facilites =  snapshot.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").getValue().toString();
+                hospitalName = snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("Hospital").getValue().toString();
+                bedCnt = snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("BedCount").getValue().toString();
+                price = snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("PricePerBed").getValue().toString();
+                Addres = snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("Address").getValue().toString();
+                Phone =  snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("PhoneNo").getValue().toString();
+                facilites =  snapshot.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("Facilities").getValue().toString();
                 binding.hospitalName.setText(hospitalName);
                 binding.bedCount.setText(bedCnt);
                 binding.price.setText(price);
@@ -130,11 +130,11 @@ public class AdminMainActivity extends AppCompatActivity {
         String facilities = binding.facilities.getText().toString();
         String phone = binding.phoneNo.getText().toString();
         String address = binding.address.getText().toString();
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("bed").setValue(bedCnt);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("price").setValue(price);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("facilites").setValue(facilities);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Phone").setValue(phone);
-        databaseReference.child("Organization").child(adminState).child(adminDistrict).child(orgKey).child("Addres").setValue(address);
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("BedCount").setValue(bedCnt);
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("PricePerBed").setValue(price);
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("Facilities").setValue(facilities);
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("PhoneNo").setValue(phone);
+        databaseReference.child("Organizations").child(adminState).child(adminDistrict).child(orgKey).child("Address").setValue(address);
         binding.progressBar.setVisibility(View.INVISIBLE);
     }
 

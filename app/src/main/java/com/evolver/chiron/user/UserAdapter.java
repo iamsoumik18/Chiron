@@ -32,18 +32,18 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull UserModel userModel) {
         holder.name.setText(userModel.getHospital());
-        holder.bedCnt.setText(userModel.getBed());
-        holder.price.setText("Rs "+userModel.getPrice());
+        holder.bedCnt.setText(userModel.getBedCount());
+        holder.price.setText("Rs "+userModel.getPricePerBed());
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), UserSelectedHospitalActivity.class);
                 intent.putExtra("name",userModel.getHospital());
-                intent.putExtra("bedCnt",userModel.getBed());
-                intent.putExtra("price",userModel.getPrice());
-                intent.putExtra("address", userModel.getAddres());
-                intent.putExtra("phoneNo", userModel.getPhone());
-                intent.putExtra("facilities",userModel.getFacilites());
+                intent.putExtra("bedCnt",userModel.getBedCount());
+                intent.putExtra("price",userModel.getPricePerBed());
+                intent.putExtra("address", userModel.getAddress());
+                intent.putExtra("phoneNo", userModel.getPhoneNo());
+                intent.putExtra("facilities",userModel.getFacilities());
                 context.startActivity(intent);
             }
         });

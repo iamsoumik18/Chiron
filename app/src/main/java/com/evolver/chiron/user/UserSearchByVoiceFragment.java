@@ -109,7 +109,7 @@ public class UserSearchByVoiceFragment extends Fragment {
                     binding.tvIndianDistrictsHead.setError(null);
                     binding.progressBarContainer.setVisibility(View.VISIBLE);
                     cnt = 0;
-                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict);
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Organizations").child(selectedState).child(selectedDistrict);
                     ref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -121,7 +121,7 @@ public class UserSearchByVoiceFragment extends Fragment {
                                 binding.recView.setLayoutManager(new LinearLayoutManager(getContext()));
                                 FirebaseRecyclerOptions<UserModel> options =
                                         new FirebaseRecyclerOptions.Builder<UserModel>()
-                                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organization").child(selectedState).child(selectedDistrict),UserModel.class)
+                                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Organizations").child(selectedState).child(selectedDistrict).orderByChild("Hospital"),UserModel.class)
                                                 .build();
                                 adapter = new UserAdapter(options);
                                 adapter.startListening();

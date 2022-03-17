@@ -67,10 +67,10 @@ public class AdminRequestActivity extends AppCompatActivity {
         String state = binding.orgState.getText().toString();
         String country = binding.orgCountry.getText().toString();
 
-        databaseReference.child("Admin Request").child(country).child(state).child(dist).child("Organization Name").setValue(name);
-        databaseReference.child("Admin Request").child(country).child(state).child(dist).child("Organization Email").setValue(email);
-        databaseReference.child("Admin Request").child(country).child(state).child(dist).child("Organization Phone no").setValue(phn);
-        databaseReference.child("Admin Request").child(country).child(state).child(dist).child("Organization Address").setValue(address);
+        databaseReference.child("AdminRequests").child(country).child(state).child(dist).child("OrganizationName").setValue(name);
+        databaseReference.child("AdminRequests").child(country).child(state).child(dist).child("OrganizationEmail").setValue(email);
+        databaseReference.child("AdminRequests").child(country).child(state).child(dist).child("OrganizationPhoneNo").setValue(phn);
+        databaseReference.child("AdminRequests").child(country).child(state).child(dist).child("OrganizationAddress").setValue(address);
 
     }
 }
