@@ -11,9 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.load.model.Model;
 import com.evolver.chiron.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import java.util.Objects;
 
 public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.ViewHolder> {
 
@@ -23,6 +26,11 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserModel, UserAdapter.
         super(options);
         this.context = context;
     }
+
+    public UserAdapter(FirebaseRecyclerOptions<UserModel> options) {
+        super(options);
+    }
+
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull UserModel userModel) {
